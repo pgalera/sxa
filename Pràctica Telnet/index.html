@@ -788,10 +788,11 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>telnet
 </code></pre></div></td></tr></table></div>
 <h3 id="44-visualitzacio-de-la-contrasenya">4.4 Visualització de la contrasenya</h3>
-<ul>
-<li>A mesura que captures el trànsit Telnet, podràs veure el <strong>nom d'usuari</strong> i la <strong>contrasenya</strong> enviats en <strong>text pla</strong>.</li>
-<li>Explora els paquets capturats per veure les dades d'autenticació.</li>
-</ul>
+<p>Quan utilitzes Telnet per establir una connexió entre dues màquines i introduir la contrasenya, aquesta <strong>normalment s'envia caràcter a caràcter</strong>. És a dir, cada caràcter que escrius es transmet de manera individual al servidor.</p>
+<p>Com a <strong>Telnet no xifra les dades</strong>, això vol dir que cada caràcter que introdueixes (incloent-hi la contrasenya) viatja per la xarxa en <strong>text pla</strong>. Quan analitzes el tràfic amb Wireshark, cada caràcter del password es pot mostrar en una línia diferent dins el registre de paquets capturats.</p>
+<p>El comportament que veus en Wireshark sol ser:</p>
+<p>Cada cop que prems una tecla, es genera un nou paquet que conté aquest caràcter.
+Wireshark captura aquests paquets per separat, mostrant un paquet per cada caràcter.</p>
 <hr />
 <h2 id="pas-5-connexio-des-de-windows-11-opcional">Pas 5: Connexió des de Windows 11 (Opcional)</h2>
 <h3 id="51-activacio-del-client-telnet-a-windows-11">5.1 Activació del client Telnet a Windows 11</h3>

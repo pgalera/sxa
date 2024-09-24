@@ -933,7 +933,7 @@
 <p>Accediu remotament des del client al servidor i feu una llista del contingut del directori de connexió.</p>
 </li>
 <li>
-<p>Accediu des del client Windows XP i tracteu de capturar els paquets amb <em>Wireshark</em> per a aconseguir la contrasenya.</p>
+<p>Accediu des del client Windows i tracteu de capturar els paquets amb <em>Wireshark</em> per a aconseguir la contrasenya.</p>
 </li>
 </ol>
 <p><strong>Documenta el procés amb captures i comentaris.</strong></p>
@@ -964,12 +964,10 @@
 <li>El receptor comprovarà la signatura del missatge fent servir la clau pública de l’emissor.</li>
 </ol>
 <p>En aquest procediment mai no es transmeten les claus privades. L’intercanvi de les claus públiques és senzill, ja que no cal que es transmetin fent ús d’un canal segur. Es garanteix que el missatge no pot ser compromès en la seva transmissió i tant l’emissor com el receptor comproven l’autenticitat de l’altra entitat.</p>
-<p>El principal inconvenient de la criptografia de clau pública és el seu consum de recursos. És més costosa en temps d’encriptació/desencriptació i el missatge encriptat ocupa més que el text clar. En la taula.3 podeu veure un resum dels principals avantatges i inconvenients de les diferents tècniques criptogràfiques.</p>
+<p>El principal inconvenient de la criptografia de clau pública és el seu consum de recursos. És més costosa en temps d’encriptació/desencriptació i el missatge encriptat ocupa més que el text clar. En la taula següent podeu veure un resum dels principals avantatges i inconvenients de les diferents tècniques criptogràfiques.</p>
 <h5 id="criptografia-hibrida">Criptografia híbrida</h5>
 <p>La criptografia híbrida combina el sistema de clau compartida i el de clau pública per obtenir tots els avantatges sense els inconvenients. En aquest sistema només s’utilitza la criptografia de clau pública per transmetre una clau compartida, normalment generada de manera dinàmica per aquesta comunicació, al receptor. Una vegada s’ha comunicat la clau compartida a totes dues estacions, s’utilitza l’encriptació convencional per tal d’encriptar el gruix del missatge.</p>
 <p>Els sistemes basats en criptografia híbrida són tan forts com els sistemes de clau compartida i clau pública que utilitzin.</p>
-<p>La criptografia híbrida combina el sistema de clau compartida i el de clau pública per obtenir tots els avantatges sense els inconvenients. En aquest sistema només s’utilitza la criptografia de clau pública per transmetre una clau compartida, normalment generada de manera dinàmica per aquesta comunicació, al receptor. Una vegada s’ha comunicat la clau compartida a totes dues estacions, s’utilitza l’encriptació convencional per tal d’encriptar el gruix del missatge.</p>
-<p>Els sistemes basats en criptografia híbrida són tan forts com els sistemes de clau compartida i clau pública que utilitzen.</p>
 <table>
 <thead>
 <tr>
