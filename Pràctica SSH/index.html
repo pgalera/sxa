@@ -1,0 +1,844 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Paco Galera">
+      
+      
+        <link rel="canonical" href="https://pgalera.github.io/sxa/Pr%C3%A0ctica%20SSH/">
+      
+      
+      
+      
+      <link rel="icon" href="../img/logojaume.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Pràctica UD2. Connexió SSH i transferència d'arxius - Serveis en Xarxa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-GJ8MB56SLW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-GJ8MB56SLW",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-GJ8MB56SLW",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Pràctica UD2. Connexió SSH i transferència d'arxius - Serveis en Xarxa" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/Pràctica SSH.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/Pr%C3%A0ctica%20SSH/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Pràctica UD2. Connexió SSH i transferència d'arxius - Serveis en Xarxa" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/Pràctica SSH.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-de-xarxes-connexio-ssh-i-transferencia-darxius-entre-una-maquina-ubuntu-server-24-i-windows-11-xarxa-interna" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href=".." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+      
+  <img src="../img/logojaume.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Serveis en Xarxa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pràctica UD2. Connexió SSH i transferència d'arxius
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Índex
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SMX2-SXA-2/" class="md-tabs__link">
+        
+  
+    
+  
+  Unitat 2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../SMX2-SXA-Pr%C3%A0ctiques/" class="md-tabs__link">
+        
+  
+    
+  
+  Pràctiques
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+      
+  <img src="../img/logojaume.png" alt="logo">
+
+    </a>
+    Serveis en Xarxa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unitat 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectiu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-i-configurar-ssh-en-ubuntu-server-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar i configurar SSH en Ubuntu Server 24
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lar i configurar SSH en Ubuntu Server 24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-putty-en-windows-11-per-a-la-connexio-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar PuTTY en Windows 11 per a la connexió SSH
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lar PuTTY en Windows 11 per a la connexió SSH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-filezilla-en-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar FileZilla en Windows 11
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lar FileZilla en Windows 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-arxiu-gran-en-el-servidor-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un arxiu gran en el servidor Ubuntu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crear un arxiu gran en el servidor Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferir-arxius-amb-filezilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transferir arxius amb FileZilla
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transferir arxius amb FileZilla">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusió
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practica-de-xarxes-connexio-ssh-i-transferencia-darxius-entre-una-maquina-ubuntu-server-24-i-windows-11-xarxa-interna">Pràctica de xarxes: Connexió SSH i transferència d'arxius entre una màquina Ubuntu Server 24 i Windows 11 (xarxa interna)</h1>
+<h2 id="objectiu">Objectiu</h2>
+<p>L'objectiu d'aquesta pràctica és aprendre a:
+- Crear una màquina virtual Ubuntu Server 24 i configurar SSH.
+- Crear una màquina virtual amb Windows 11, només amb una targeta de xarxa interna, per comunicar-se amb la màquina Ubuntu.
+- Utilitzar PuTTY per establir una connexió SSH al servidor Ubuntu.
+- Instal·lar i utilitzar FileZilla per a realitzar transferències SFTP entre client (Windows 11) i servidor (Ubuntu Server 24).</p>
+<hr />
+<h2 id="installar-i-configurar-ssh-en-ubuntu-server-24">Instal·lar i configurar SSH en Ubuntu Server 24</h2>
+<h3 id="pasos">Pasos:</h3>
+<ol>
+<li><strong>Inicia sessió a la màquina virtual</strong>:</li>
+<li>
+<p>Quan la màquina Ubuntu Server arranque, inicia sessió amb l'usuari <code>remote_user</code>.</p>
+</li>
+<li>
+<p><strong>Instal·lar el servidor SSH</strong>:</p>
+</li>
+<li>
+<p>Executa les següents comandes per a actualitzar els repositoris i instal·lar el servidor SSH:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openssh-server<span class="w"> </span>-y
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p><strong>Verificar que el servei SSH està actiu</strong>:</p>
+</li>
+<li>
+<p>Utilitza la comanda següent per comprovar que el servei SSH està en funcionament:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+</code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p><strong>Configurar SSH perquè accepte connexions internes</strong>:</p>
+</li>
+<li>Si el servidor ha de rebre connexions a través de la xarxa interna, assegura't que el fitxer de configuració SSH permet connexions des de qualsevol adreça:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/ssh/sshd_config
+</code></pre></div></td></tr></table></div></li>
+<li>Desa el fitxer i reinicia el servei SSH:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+</code></pre></div></td></tr></table></div></li>
+</ol>
+<hr />
+<h2 id="installar-putty-en-windows-11-per-a-la-connexio-ssh">Instal·lar PuTTY en Windows 11 per a la connexió SSH</h2>
+<h3 id="pasos_1">Pasos:</h3>
+<ol>
+<li><strong>Dona connexió a Internet</strong></li>
+<li>Canvia el mode de l'adaptador a NAT o Adaptador Pont.</li>
+<li>
+<p>Canvia la configuració de la xarxa en Windows perquè l'agafe per DHCP.</p>
+</li>
+<li>
+<p><strong>Descarregar PuTTY</strong>:</p>
+</li>
+<li>Descarrega PuTTY des de la pàgina oficial (https://www.putty.org/).</li>
+<li>
+<p>Instal·la PuTTY en Windows 11.</p>
+</li>
+<li>
+<p><strong>Descarregar FileZilla (per a després)</strong></p>
+</li>
+<li>
+<p>Descarrega i instal·la FileZilla Client des de la pàgina oficial (https://filezilla-project.org/).</p>
+</li>
+<li>
+<p><strong>Descarrega una imatge de Homer Simpson (per a després)</strong></p>
+</li>
+<li>
+<p>Descarrega una imatge de Homer Simpson i guárdala com a homer.jpg en Descàrregues</p>
+</li>
+<li>
+<p><strong>Connecta'l de nou a la xarxa interna</strong></p>
+</li>
+<li>Canvia el mode de l'adaptador a xarxa interna.</li>
+<li>
+<p>Canvia la configuració de la xarxa en Windows perquè l'agafe manualment (192.168.1.10/24).</p>
+</li>
+<li>
+<p><strong>Configurar la connexió SSH</strong>:</p>
+</li>
+<li>Obri PuTTY i, en el camp <em>Host Name (or IP address)</em>, introdueix la IP de la xarxa interna del servidor Ubuntu (<code>192.168.1.1</code>).</li>
+<li>
+<p>Selecciona <em>SSH</em> com a tipus de connexió i prem <em>Open</em>.</p>
+</li>
+<li>
+<p><strong>Iniciar sessió al servidor</strong>:</p>
+</li>
+<li>Introdueix el nom d'usuari <code>remote_user</code> i la contrasenya per establir la connexió amb el servidor Ubuntu.</li>
+</ol>
+<hr />
+<h2 id="installar-filezilla-en-windows-11">Instal·lar FileZilla en Windows 11</h2>
+<h3 id="pasos_2">Pasos:</h3>
+<ol>
+<li><strong>Configurar la connexió SFTP</strong>:</li>
+<li>Obri FileZilla i configura una nova connexió SFTP utilitzant les següents dades:<ul>
+<li><em>Host</em>: <code>192.168.1.1</code></li>
+<li><em>Nom d'usuari</em>: <code>remote_user</code></li>
+<li><em>Contrasenya</em>: la contrasenya de <code>remote_user</code></li>
+<li><em>Port</em>: 22 (per a SFTP)</li>
+</ul>
+</li>
+<li>Fes clic a "Connexió ràpida" per iniciar la connexió.</li>
+</ol>
+<hr />
+<h2 id="crear-un-arxiu-gran-en-el-servidor-ubuntu">Crear un arxiu gran en el servidor Ubuntu</h2>
+<h3 id="pasos_3">Pasos:</h3>
+<ol>
+<li>
+<p><strong>Connecta't al servidor Ubuntu via SSH (amb PuTTY)</strong>.</p>
+</li>
+<li>
+<p><strong>Crear un arxiu de més de 4MB</strong>:</p>
+</li>
+<li>Navega a la carpeta <code>/home/remote_user</code>:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>/home/remote_user
+</code></pre></div></td></tr></table></div></li>
+<li>Crea un arxiu de 5MB:
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>fallocate<span class="w"> </span>-l<span class="w"> </span>5M<span class="w"> </span>server_file.txt
+</code></pre></div></td></tr></table></div></li>
+</ol>
+<hr />
+<h2 id="transferir-arxius-amb-filezilla">Transferir arxius amb FileZilla</h2>
+<h3 id="pasos_4">Pasos:</h3>
+<ol>
+<li><strong>Transferir l'arxiu del servidor al client (Windows 11)</strong>:</li>
+<li>
+<p>A FileZilla, arrossega l'arxiu <code>server_file.txt</code> des de la màquina Ubuntu (dreta) a la carpeta de <em>Descàrregues</em> de Windows 11 (esquerra).</p>
+</li>
+<li>
+<p><strong>Transferir la imatge de Homer del client al servidor</strong>:</p>
+</li>
+<li>Arrossega-la des de la carpeta de <em>Descàrregues</em> a la carpeta <code>/home/remote_user/</code> en el servidor Ubuntu.</li>
+</ol>
+<hr />
+<h2 id="conclusio"><strong>Conclusió</strong></h2>
+<p>En aquesta pràctica has après a:
+- Configurar una màquina Ubuntu Server 24 amb SSH i IP fixa en xarxa interna.
+- Configurar una màquina Windows 11 amb una única targeta de xarxa interna per comunicar-se amb la màquina Ubuntu.
+- Utilitzar PuTTY per a connectar-se via SSH a la màquina Ubuntu.
+- Realitzar transferències de fitxers entre les dues màquines amb FileZilla, utilitzant SFTP.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Torna a l'inici
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Apunts SXA - 2SMX by P.Galera es troba sota llicència CC BY-NC-SA 4.0 - <a href="#__consent">Canvia la configuració de les cookies</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:fj.galerataberner@edu.gva.es" target="_blank" rel="noopener" title="Contacte" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>Consentiment de Cookies</h4>
+<p>Utilitzem cookies per reconèixer les vostres visites i preferències repetides, així com per mesurar l'eficàcia de la nostra documentació i si els usuaris troben el que estan cercant. Amb el vostre consentiment, ens esteu ajudant a millorar la nostra documentació.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accepta</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestiona la configuració</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>
