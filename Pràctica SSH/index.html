@@ -535,15 +535,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#conclusio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusió
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -694,12 +685,38 @@
 <li>Arrossega-la des de la carpeta de <em>Descàrregues</em> a la carpeta <code>/home/remote_user/</code> en el servidor Ubuntu.</li>
 </ol>
 <hr />
-<h2 id="conclusio"><strong>Conclusió</strong></h2>
-<p>En aquesta pràctica has après a:
-- Configurar una màquina Ubuntu Server 24 amb SSH i IP fixa en xarxa interna.
-- Configurar una màquina Windows 11 amb una única targeta de xarxa interna per comunicar-se amb la màquina Ubuntu.
-- Utilitzar PuTTY per a connectar-se via SSH a la màquina Ubuntu.
-- Realitzar transferències de fitxers entre les dues màquines amb FileZilla, utilitzant SFTP.</p>
+<h1 id="connexio-ssh-sense-necessitat-de-contrasenya">Connexió SSH sense necessitat de contrasenya</h1>
+<p>Aquesta guia t'ensenyarà com configurar l'accés a una màquina via SSH sense haver d'introduir la contrasenya cada vegada. Per a poder connectar-te a un servidor remot amb un usuari concret sense que pregunte usuari ni password, aquest usuari ha d'estar creat a les dues màquines. Abans de començar crea l'usuari <code>remote_user</code> al client mitjançant l'ordre:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>remote_user
+</code></pre></div></td></tr></table></div>
+<h2 id="passos-a-seguir">Passos a seguir</h2>
+<h3 id="generar-una-clau-ssh">Generar una clau SSH</h3>
+<p>Si encara no tens una clau SSH generada, pots crear-ne una de nova executant aquesta comanda al teu terminal (a la màquina local):</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span>
+</code></pre></div></td></tr></table></div>
+<p>Això crearà una clau pública i una clau privada. Durant el procés, pots deixar el camp de la contrasenya buit si vols accés sense contrasenya (o pots afegir-ne una per més seguretat).</p>
+<h3 id="copiar-la-clau-publica-al-servidor-remot">Copiar la clau pública al servidor remot</h3>
+<p>Per evitar haver d'introduir la contrasenya cada vegada, has de copiar la teva <strong>clau pública</strong> al servidor remot. Pots fer-ho amb la següent comanda:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>ssh-copy-id<span class="w"> </span>nom_usuari@servidor_remot
+</code></pre></div></td></tr></table></div>
+<p>Aquesta comanda copiarà automàticament la teva clau pública al fitxer <code>~/.ssh/authorized_keys</code> del servidor remot.</p>
+<h3 id="provar-la-connexio">Provar la connexió</h3>
+<p>Ara, pots provar de connectar-te al servidor sense haver de posar la contrasenya:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>ssh<span class="w"> </span>nom_usuari@servidor_remot
+</code></pre></div></td></tr></table></div>
+<h3 id="opcional-configurar-larxiu-sshconfig">Opcional) Configurar l'arxiu <code>~/.ssh/config</code></h3>
+<p>Per simplificar encara més l'accés a diverses màquines, pots configurar un fitxer <code>~/.ssh/config</code> amb configuracions personalitzades per a cada servidor. Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>Host nom_del_servidor
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    HostName servidor_remot
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    User nom_usuari
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    IdentityFile ~/.ssh/id_rsa
+</code></pre></div></td></tr></table></div>
+<p>Ara podràs connectar-te amb només:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>ssh<span class="w"> </span>nom_del_servidor
+</code></pre></div></td></tr></table></div>
 
 
 
