@@ -10,13 +10,13 @@
         <meta name="author" content="Paco Galera & Javier Beteta">
       
       
-        <link rel="canonical" href="https://pgalera.github.io/sxa/CanviMirror/">
+        <link rel="canonical" href="https://pgalera.github.io/sxa/ManUbuntuServerDocker/">
       
       
-        <link rel="prev" href="../SMX2-SXA-2/">
+        <link rel="prev" href="../CanviMirror/">
       
       
-        <link rel="next" href="../ManUbuntuServerDocker/">
+        <link rel="next" href="../Prac1NAT/">
       
       
       <link rel="icon" href="../img/logojaume.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa</title>
+        <title>Instal·lació de Docker en Ubuntu Server 24.04 LTS - Serveis en Xarxa</title>
       
     
     
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa" >
+        <meta  property="og:title"  content="Instal·lació de Docker en Ubuntu Server 24.04 LTS - Serveis en Xarxa" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/CanviMirror.png" >
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/ManUbuntuServerDocker.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pgalera.github.io/sxa/CanviMirror/" >
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/ManUbuntuServerDocker/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa" >
+        <meta  name="twitter:title"  content="Instal·lació de Docker en Ubuntu Server 24.04 LTS - Serveis en Xarxa" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/CanviMirror.png" >
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/ManUbuntuServerDocker.png" >
       
     
     
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#canvi-del-mirror-en-ubuntu-2404-lts" class="md-skip">
+        <a href="#installacio-de-docker-en-ubuntu-server-2404-lts" class="md-skip">
           Salta el contingut
         </a>
       
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Canvi del Mirror en Ubuntu 24.04 LTS
+              Instal·lació de Docker en Ubuntu Server 24.04 LTS
             
           </span>
         </div>
@@ -339,6 +339,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../CanviMirror/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Canvi de Mirror
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -355,7 +376,7 @@
           
   
   <span class="md-ellipsis">
-    Canvi de Mirror
+    Docker en Ubuntu Server
   </span>
   
 
@@ -366,7 +387,7 @@
         
   
   <span class="md-ellipsis">
-    Canvi de Mirror
+    Docker en Ubuntu Server
   </span>
   
 
@@ -388,29 +409,131 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#localitzant-el-fitxer-de-fonts" class="md-nav__link">
+  <a href="#que-es-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Localitzant el fitxer de fonts
+      Què és Docker?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#canviant-el-mirror" class="md-nav__link">
+  <a href="#avantatges-dutilitzar-docker-en-un-ubuntu-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Canviant el mirror
+      Avantatges d'utilitzar Docker en un Ubuntu Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-tenir-en-compte" class="md-nav__link">
+  <a href="#opcional-installar-docker-a-traves-dssh" class="md-nav__link">
     <span class="md-ellipsis">
-      A tenir en compte
+      OPCIONAL: Instal·lar Docker a través d'SSH
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-la-clau-gpg-oficial-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir la clau GPG oficial de Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-el-repositori-a-les-fonts-apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir el repositori a les fonts APT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installar-lultimma-versio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar l'últimma versió
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-lestat-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar l'estat de Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-lusuari-adminserver-al-grup-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir l'usuari adminserver al grup docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-usuaris-grup-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar usuaris grup Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veure-els-comandaments-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veure els comandaments de Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postinstallacio-descarregar-imatge-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postinstal·lació: Descarregar imatge Hello-World
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Postinstal·lació: Descarregar imatge Hello-World">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altres-comandaments-utils-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altres comandaments útils de Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -418,27 +541,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ManUbuntuServerDocker/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker en Ubuntu Server
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -520,29 +622,131 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#localitzant-el-fitxer-de-fonts" class="md-nav__link">
+  <a href="#que-es-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      Localitzant el fitxer de fonts
+      Què és Docker?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#canviant-el-mirror" class="md-nav__link">
+  <a href="#avantatges-dutilitzar-docker-en-un-ubuntu-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Canviant el mirror
+      Avantatges d'utilitzar Docker en un Ubuntu Server
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-tenir-en-compte" class="md-nav__link">
+  <a href="#opcional-installar-docker-a-traves-dssh" class="md-nav__link">
     <span class="md-ellipsis">
-      A tenir en compte
+      OPCIONAL: Instal·lar Docker a través d'SSH
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-la-clau-gpg-oficial-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir la clau GPG oficial de Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-el-repositori-a-les-fonts-apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir el repositori a les fonts APT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installar-lultimma-versio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar l'últimma versió
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-lestat-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar l'estat de Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-lusuari-adminserver-al-grup-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Afegir l'usuari adminserver al grup docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-usuaris-grup-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar usuaris grup Docker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veure-els-comandaments-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veure els comandaments de Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postinstallacio-descarregar-imatge-hello-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postinstal·lació: Descarregar imatge Hello-World
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Postinstal·lació: Descarregar imatge Hello-World">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altres-comandaments-utils-de-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Altres comandaments útils de Docker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -561,52 +765,111 @@
                   
 
 
-<h1 id="canvi-del-mirror-en-ubuntu-2404-lts">Canvi del Mirror en Ubuntu 24.04 LTS</h1>
-<p>Degut al mal funcionament del mirror oficial d'Ubuntu a la xarxa de Conselleria, haurem de canviar el mirror dels nostres sistemes.</p>
-<h2 id="localitzant-el-fitxer-de-fonts">Localitzant el fitxer de fonts</h2>
-<p>Antigament, els mirrors d'ubuntu anaven definits al fitxer <code>/etc/apt/sources.list</code>. Però ja fa varies versions, que aquest fitxer ens envia a un directori on podem tindre diversos fitxers de mirrors. A la versió 24.04 es fa ús d'un fitxer localitzat en <code>/etc/apt/sources.list.d/ubuntu.sources</code> on podem trobar els mirrors en format descriptiu (antigament s'emprava el format <em>en una sola linia</em>).</p>
-<h2 id="canviant-el-mirror">Canviant el mirror</h2>
-<p>Per tant, el que farem serà consultar aquest fitxer i editar-lo:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/apt/sources.list.d/ubuntu.sources
+<h1 id="installacio-de-docker-en-ubuntu-server-2404-lts">Instal·lació de Docker en Ubuntu Server 24.04 LTS</h1>
+<h2 id="que-es-docker">Què és Docker?</h2>
+<p>Docker és una plataforma de codi obert que automatitza el desplegament d'aplicacions dins de contenidors de programari. Els contenidors permeten empaquetar una aplicació amb totes les seves dependències i executar-la de manera consistent en qualsevol entorn.</p>
+<h2 id="avantatges-dutilitzar-docker-en-un-ubuntu-server">Avantatges d'utilitzar Docker en un Ubuntu Server</h2>
+<ul>
+<li><strong>Portabilitat</strong>: Els contenidors Docker poden executar-se en qualsevol sistema que tingui Docker instal·lat, independentment de les diferències en les configuracions del sistema operatiu.</li>
+<li><strong>Aïllament</strong>: Cada contenidor s'executa de manera aïllada, la qual cosa evita conflictes entre aplicacions i millora la seguretat.</li>
+<li><strong>Eficiència</strong>: Docker utilitza menys recursos que les màquines virtuals tradicionals, ja que comparteix el nucli del sistema operatiu amb els contenidors.</li>
+<li><strong>Desplegament ràpid</strong>: La creació i el desplegament de contenidors és molt més ràpid que la configuració de màquines virtuals.</li>
+<li><strong>Escalabilitat</strong>: Docker facilita l'escalabilitat horitzontal, permetent desplegar múltiples instàncies d'una aplicació de manera senzilla.</li>
+<li><strong>Gestió senzilla</strong>: Amb Docker Compose i altres eines, és fàcil gestionar múltiples contenidors i les seves configuracions.</li>
+</ul>
+<p>Utilitzar Docker en un Ubuntu Server permet una gestió més eficient i flexible dels serveis de xarxa, millorant la portabilitat, l'aïllament i l'escalabilitat de les aplicacions.</p>
+<h2 id="opcional-installar-docker-a-traves-dssh">OPCIONAL: Instal·lar Docker a través d'SSH</h2>
+<p>Per poder copiar i enganxar fragments de codi d'aquesta pràctica, es <strong>recomana</strong> accedir al nostre Servidor mitjançant SSH. Per tant, per poder comunicar la màquina nostra amb la del <em>VirtualBox</em>, haurem de posar l'adaptador de la màquina Virtual en mode <strong><em>pont</em></strong>. Una vegada arrancada la màquina ens connectarem a ella amb els comandament: <code>ssh adminserver@IP_de_la_màquinaV</code> i tot seguit, ens logarem amb la constrassenya d'administració.</p>
+<h2 id="installacio">Instal·lació</h2>
+<h3 id="afegir-la-clau-gpg-oficial-de-docker">Afegir la clau GPG oficial de Docker</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ca-certificates<span class="w"> </span>curl
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>sudo<span class="w"> </span>install<span class="w"> </span>-m<span class="w"> </span><span class="m">0755</span><span class="w"> </span>-d<span class="w"> </span>/etc/apt/keyrings
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>sudo<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/docker.asc
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>a+r<span class="w"> </span>/etc/apt/keyrings/docker.asc
 </code></pre></div></td></tr></table></div>
-<p>canviant el contingut del fitxer perquè faça ús del mirror del <strong><em>Centro Informático Científico de Andalucia (CICA)</em></strong>, deixant el fitxer així:</p>
+<h3 id="afegir-el-repositori-a-les-fonts-apt">Afegir el repositori a les fonts APT</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>URIs:<span class="w"> </span>http://ubuntu.cica.es/ubuntu/
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg<span class="w"> </span>--print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="s2">  </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$VERSION_CODENAME</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2"> stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </code></pre></div></td></tr></table></div>
-<p><strong>NOTA</strong>: no és necessari escriure-ho tot de zero, serà suficient amb canviar algunes linies!</p>
-<p>Una vegada modificat el fitxer, el guardem i actualitzem les fonts del sistema:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<h3 id="installar-lultimma-versio">Instal·lar l'últimma versió</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
 </code></pre></div></td></tr></table></div>
-<h2 id="a-tenir-en-compte">A tenir en compte</h2>
-<p>En el moment de crear aquest manual (Octubre 2024), el mirror del CICA és un dels que millor funciona des de la xarxa del centre. Però existeixen altres, com el de la <em>Universidad de Zaragoza</em> que també funcionen bé. Per tal de canviar-lo, sols hauriem d'editar la línia que fa referència a aquest (URIs):</p>
+<h3 id="comprovar-lestat-de-docker">Comprovar l'estat de Docker</h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>URIs:<span class="w"> </span>http://softlibre.unizar.es/ubuntu/archive/
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>docker
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>docker<span class="w"> </span>--version
 </code></pre></div></td></tr></table></div>
-<p>o inclús tindre els dos posats:</p>
+<h3 id="afegir-lusuari-adminserver-al-grup-docker">Afegir l'usuari <code>adminserver</code> al grup <code>docker</code></h3>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>URIs:<span class="w"> </span>http://ubuntu.cica.es/ubuntu/<span class="w"> </span>http://softlibre.unizar.es/ubuntu/archive/
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span>adminserver
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>su<span class="w"> </span>-<span class="w"> </span>adminserver
 </code></pre></div></td></tr></table></div>
+<h3 id="comprovar-usuaris-grup-docker">Comprovar usuaris grup Docker</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>id<span class="w"> </span>-nG
+</code></pre></div></td></tr></table></div>
+<h3 id="veure-els-comandaments-de-docker">Veure els comandaments de Docker</h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>docker
+</code></pre></div></td></tr></table></div>
+<h2 id="postinstallacio-descarregar-imatge-hello-world">Postinstal·lació: Descarregar imatge Hello-World</h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div></td></tr></table></div>
+<p>Si tot ha anat bé, hauríem de veure alguna cosa semblant a açò:</p>
+<p><center><img alt="Hello World Docker" src="../img/hello-world.png" width="%" /></center></p>
+<h3 id="altres-comandaments-utils-de-docker">Altres comandaments útils de Docker</h3>
+<ul>
+<li>BUSCAR IMATGE UBUNTU EN DOCKERHUB</li>
+</ul>
+<p><code>docker search ubuntu</code></p>
+<ul>
+<li>DESCARREGAR IMATGE UBUNTU</li>
+</ul>
+<p><code>docker pull ubuntu</code></p>
+<ul>
+<li>VEURE IMATGES DOCKER</li>
+</ul>
+<p><code>docker images</code></p>
+<ul>
+<li>EXECUTAR UN CONTENIDOR DE DOCKER</li>
+</ul>
+<p><code>docker run -it ubuntu</code>
+<code>apt update</code>
+<code>exit</code></p>
+<ul>
+<li>ADMINISTRAR CONTENIDORS DOCKER / VEURE CONTENIDORS ACTIUS</li>
+</ul>
+<p><code>docker ps</code></p>
+<ul>
+<li>VEURE CONTENIDORS ACTIUS I INACTIUS</li>
+</ul>
+<p><code>docker ps -a</code></p>
+<ul>
+<li>VEURE ÚLTIM CONTENIDOR CREAT</li>
+</ul>
+<p><code>docker ps -l</code></p>
+<ul>
+<li>INICIAR UN CONTENIDOR</li>
+</ul>
+<p><code>docker start IDCONTENIDOR</code></p>
+<ul>
+<li>DETENIR CONTENIDOR</li>
+</ul>
+<p><code>docker stop IDCONTENIDOR</code></p>
+<ul>
+<li>ELIMINAR CONTENIDOR</li>
+</ul>
+<p><code>docker rm IDCONTENIDOR</code></p>
 
 
 
@@ -647,7 +910,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
         
           
-          <a href="../SMX2-SXA-2/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Unitat 2">
+          <a href="../CanviMirror/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Canvi de Mirror">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -657,20 +920,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Unitat 2
+                Canvi de Mirror
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ManUbuntuServerDocker/" class="md-footer__link md-footer__link--next" aria-label="Següent: Docker en Ubuntu Server">
+          <a href="../Prac1NAT/" class="md-footer__link md-footer__link--next" aria-label="Següent: Pràctica NAT">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Següent
               </span>
               <div class="md-ellipsis">
-                Docker en Ubuntu Server
+                Pràctica NAT
               </div>
             </div>
             <div class="md-footer__button md-icon">
