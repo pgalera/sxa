@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pgalera.github.io/sxa/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/CanviMirror/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
-         <loc>https://pgalera.github.io/sxa/Pr%C3%A0ctica%20NAT/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <loc>https://pgalera.github.io/sxa/Prac1NAT/</loc>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
-         <loc>https://pgalera.github.io/sxa/Pr%C3%A0ctica%20SSH/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <loc>https://pgalera.github.io/sxa/Prac2Telnet/</loc>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
-         <loc>https://pgalera.github.io/sxa/Pr%C3%A0ctica%20Telnet/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <loc>https://pgalera.github.io/sxa/Prac3SSH/</loc>
+         <lastmod>2024-10-02</lastmod>
+    </url>
+    <url>
+         <loc>https://pgalera.github.io/sxa/SMX2-SXA-1/</loc>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-2/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-02</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-Pr%C3%A0ctiques/</loc>
-         <lastmod>2024-10-01</lastmod>
+         <lastmod>2024-10-02</lastmod>
     </url>
 </urlset>
