@@ -502,6 +502,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tansferencia-segura-darxius-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tansferència segura d'arxius - scp
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -839,6 +848,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tansferencia-segura-darxius-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tansferència segura d'arxius - scp
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1112,6 +1130,34 @@
 </li>
 </ol>
 <p><strong>Documenta el procés amb captures i comentaris.</strong></p>
+</details>
+<h3 id="tansferencia-segura-darxius-scp">Tansferència segura d'arxius - <em>scp</em></h3>
+<p>Funciona de igaul forma que la comanda <code>cp</code> que s'empra per copiar en local, però de forma remota. La sintaxi bàsica del comandament <code>scp</code> és la següent:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">scp (Secure Copy)</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>scp<span class="w"> </span><span class="o">[</span>opcions<span class="o">]</span><span class="w"> </span><span class="o">[</span>usuari@<span class="o">]</span>host:fitxer_origen<span class="w"> </span><span class="o">[</span>usuari@<span class="o">]</span>host:fitxer_destí
+</code></pre></div></td></tr></table></div>
+<details class="example">
+<summary>Exemples d'ús</summary>
+<p><strong>Copiar un fitxer des de la màquina local a una màquina remota:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>scp<span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un fitxer des d'una màquina remota a la màquina local:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>scp<span class="w"> </span>usuari@host_remot:/ruta/origen/fitxer_remot.txt<span class="w"> </span>/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un directori de manera recursiva des de la màquina local a una màquina remota:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>directori_local/<span class="w"> </span>usuari@host_remot:/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un fitxer entre dues màquines remotes:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>scp<span class="w"> </span>usuari1@host_remot1:/ruta/origen/fitxer.txt<span class="w"> </span>usuari2@host_remot2:/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un fitxer especificant un port SSH diferent:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>scp<span class="w"> </span>-P<span class="w"> </span><span class="m">2222</span><span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un fitxer amb compressió durant la transferència:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>scp<span class="w"> </span>-C<span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
+</code></pre></div></td></tr></table></div>
+<p><strong>Copiar un fitxer amb una velocitat de transferència limitada:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>scp<span class="w"> </span>-l<span class="w"> </span><span class="m">1000</span><span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
+</code></pre></div></td></tr></table></div>
 </details>
 
 
