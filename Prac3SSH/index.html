@@ -13,6 +13,8 @@
         <link rel="canonical" href="https://pgalera.github.io/sxa/Prac3SSH/">
       
       
+        <link rel="prev" href="../Prac2Telnet/">
+      
       
       
       <link rel="icon" href="../img/logojaume.png">
@@ -298,17 +300,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -322,7 +326,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Pràctiques i Manuals
@@ -408,6 +412,163 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pràctica SSH
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica SSH
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectiu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-i-configurar-ssh-en-ubuntu-server-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar i configurar SSH en Ubuntu Server 24
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-putty-en-windows-11-per-a-la-connexio-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar PuTTY en Windows 11 per a la connexió SSH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installar-filezilla-en-windows-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lar FileZilla en Windows 11
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-arxiu-gran-en-el-servidor-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un arxiu gran en el servidor Ubuntu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transferir-arxius-amb-filezilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transferir arxius amb FileZilla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connexio-ssh-sense-necessitat-de-contrasenya" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connexió SSH sense necessitat de contrasenya
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connexió SSH sense necessitat de contrasenya">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generar-una-clau-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generar una clau SSH
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-la-clau-publica-al-servidor-remot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Copiar la clau pública al servidor remot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provar-la-connexio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provar la connexió
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -532,15 +693,6 @@
   <a href="#provar-la-connexio" class="md-nav__link">
     <span class="md-ellipsis">
       Provar la connexió
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opcional-configurar-larxiu-sshconfig" class="md-nav__link">
-    <span class="md-ellipsis">
-      Opcional: Configurar l'arxiu ~/.ssh/config
     </span>
   </a>
   
@@ -697,7 +849,7 @@
 </ol>
 <hr />
 <h2 id="connexio-ssh-sense-necessitat-de-contrasenya">Connexió SSH sense necessitat de contrasenya</h2>
-<p>Aquesta guia t'ensenyarà com configurar l'accés a una màquina via SSH sense haver d'introduir la contrasenya cada vegada. Per a poder connectar-te a un servidor remot amb un usuari concret sense que pregunte usuari ni password, aquest usuari ha d'estar creat a les dues màquines. Abans de començar crea l'usuari <code>remote_user</code> al client mitjançant l'ordre:</p>
+<p>Per a poder connectar-te a un servidor remot amb un usuari concret sense que pregunte usuari ni password, aquest usuari ha d'estar creat a les dues màquines. Abans de començar crea l'usuari <code>remote_user</code> al client mitjançant l'ordre:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>remote_user
 </code></pre></div></td></tr></table></div>
 <h3 id="generar-una-clau-ssh">Generar una clau SSH</h3>
@@ -714,8 +866,9 @@
 <p>Ara, pots provar de connectar-te al servidor sense haver de posar la contrasenya:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>ssh<span class="w"> </span>nom_usuari@servidor_remot
 </code></pre></div></td></tr></table></div>
-<h3 id="opcional-configurar-larxiu-sshconfig">Opcional: Configurar l'arxiu <code>~/.ssh/config</code></h3>
-<p>Per simplificar encara més l'accés a diverses màquines, pots configurar un fitxer <code>~/.ssh/config</code> amb configuracions personalitzades per a cada servidor. Exemple:</p>
+<!-- ### Opcional: Configurar l'arxiu `~/.ssh/config`
+Per simplificar encara més l'accés a diverses màquines, pots configurar un fitxer `~/.ssh/config` amb configuracions personalitzades per a cada servidor. Exemple:
+
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
@@ -724,9 +877,12 @@
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a>    User nom_usuari
 <a id="__codelineno-10-4" name="__codelineno-10-4"></a>    IdentityFile ~/.ssh/id_rsa
 </code></pre></div></td></tr></table></div>
-<p>Ara podràs connectar-te amb només:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>ssh<span class="w"> </span>nom_del_servidor
-</code></pre></div></td></tr></table></div>
+
+Ara podràs connectar-te amb només:
+
+```bash
+ssh nom_del_servidor
+``` -->
 
 
 
@@ -762,6 +918,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
+        
+          
+          <a href="../Prac2Telnet/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Pràctica Telnet">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Pràctica Telnet
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
