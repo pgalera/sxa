@@ -511,6 +511,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sincronitzacio-de-directoris-amb-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sincronització de directoris amb rsync
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -878,6 +887,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sincronitzacio-de-directoris-amb-rsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sincronització de directoris amb rsync
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -994,7 +1012,7 @@
 <p><strong>Telnet</strong> és un protocol que emula un terminal remot per a connectar-se a una màquina multiusuari. Igual que amb el protocol FTP, cal el programari necessari i un protocol específic per aquest servei.</p>
 <p>El port que s'utilitza és generalment el <strong>23</strong>. Només serveix per accedir-hi en mode terminal, és a dir, sense gràfics, però va ser una eina molt útil per arreglar problemes a distància. També s'ha fet servir per consultar dades a distància, com dades personals accessibles a través de la xarxa, informació bibliogràfica, etc. Els requisits per accedir a aquest servei són molt senzills: conèixer el nom i l'adreça del servidor remot i estar habilitat per a poder utilitzar-lo mitjançant un identificador d'usuari i una contrasenya. Normalment es crida a una aplicació externa que és la que realitza la connexió. En aquest cas s'ha d'indicar la màquina i el login: <code>telnet://maquina.domini@login</code>.</p>
 <p>El seu principal problema és de seguretat, ja que tots els noms d'usuari i contrasenyes necessàries per entrar a les màquines viatjaven per la xarxa sense xifrar. Això feia que qualsevol persona que espies el tràfic de la xarxa pogués obtenir aquestes dades i d'aquesta manera accedir també a les màquines. Es va deixar de fer servir quasi totalment, fa uns anys, quan va aparèixer i es va popularitzar l'SSH, que es pot descriure com una versió xifrada de Telnet.</p>
-<details class="question">
+<details class="danger">
 <summary>PRÀCTICA 1: Accés remot mitjançant Telnet</summary>
 <p>L’objectiu d’aquesta activitat és utilitzar el programari Telnet per accedir remotament a una màquina.</p>
 <p>Per fer aquesta pràctica haureu de disposar de dues màquines, la local i la remota. En cas que no fos així, podeu instal·lar el client i el servidor a la mateixa màquina.</p>
@@ -1123,7 +1141,7 @@
 <p class="admonition-title">Fitxer <code>known_hosts</code></p>
 <p>Quan un client SSH estableix una connexió per primera vegada amb un amfitrió, enregistra en fitxer known_hosts la clau pública de l’estació. La propera vegada que s’estableixi una connexió es comprovarà aquesta clau pública.</p>
 </div>
-<details class="question">
+<details class="danger">
 <summary>PRÀCTICA 2: Connexió SSH i transferència d'arxius</summary>
 <p>L'objectiu d'aquesta pràctica és aprendre a:</p>
 <ul>
@@ -1180,8 +1198,8 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>scp<span class="w"> </span>-l<span class="w"> </span><span class="m">1000</span><span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
 </code></pre></div></td></tr></table></div>
 </details>
-<div class="admonition question">
-<p class="admonition-title">PRÀCTICA 3: Copia remota amb <em>scp</em></p>
+<details class="question">
+<summary>ACTIVITAT 3: Copia remota amb <em>scp</em></summary>
 <p>Tota l'activitat s'ha de fer des d'un client Lubuntu, loguejat com a <code>remote_user</code>. El Server DHCP ha d'estar en marxa, però no es pot accedir a ell. Fes el següent:</p>
 <ol>
 <li>Crea les carpetes <strong>ENVIAR</strong> i <strong>REBRE</strong> a l'escriptori del client (Recorda, usuari <code>remote_user</code>).</li>
@@ -1190,8 +1208,54 @@
 <li>Crea els fitxers <code>server1.txt</code> i <code>server2.txt</code> dins de la carpeta <em>REPOS</em>.</li>
 <li>Copia els fitxers, d'un en un, amb <strong><em>scp</em></strong> entre el client i el servidor: de la carpeta <em>ENVIAR</em> a <em>REPOS</em> i de <em>REPOS</em> a <em>REBRE</em>.</li>
 </ol>
-<p>Documenta tot el procés.</p>
-</div>
+<p><strong>Documenta tot el procés.</strong></p>
+</details>
+<h3 id="sincronitzacio-de-directoris-amb-rsync">Sincronització de directoris amb <em>rsync</em></h3>
+<p>La comanda <code>rsync</code> és una eina poderosa per a la sincronització de fitxers i directoris entre diferents ubicacions, ja siga en la mateixa màquina o entre màquines remotes. La seva sintaxi bàsica és la següent:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>rsync<span class="w"> </span><span class="o">[</span>opcions<span class="o">]</span><span class="w"> </span><span class="o">[</span>origen<span class="o">]</span><span class="w"> </span><span class="o">[</span>destí<span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Opcions comunes</strong></p>
+<ul>
+<li><code>-a</code> o <code>--archive</code>: Mode arxiu; és equivalent a <code>-rlptgoD</code> (recursiu, enllaços, permisos, temps, grup, propietari, dispositius).</li>
+<li><code>-v</code> o <code>--verbose</code>: Mostra informació detallada del procés.</li>
+<li><code>-z</code> o <code>--compress</code>: Comprimeix els fitxers durant la transferència.</li>
+<li><code>-P</code>: Mostra el progrés de la transferència i permet reprendre transferències interrompudes.</li>
+<li><code>--delete</code>: Elimina els fitxers del destí que no existeixen en l'origen.</li>
+<li><code>-e ssh</code>: Utilitza SSH per a la transferència de dades.</li>
+</ul>
+<details class="example">
+<summary>Exemples d'ús</summary>
+<p><strong>Sincronitzar un directori local amb un altre directori local:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>/ruta/origen/<span class="w"> </span>/ruta/desti/
+</code></pre></div></td></tr></table></div>
+<p><strong>Sincronitzar un directori local amb un directori remot:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuari@host_remot:/ruta/desti/
+</code></pre></div></td></tr></table></div>
+<p><strong>Sincronitzar un directori remot amb un directori local:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>usuari@host_remot:/ruta/origen/<span class="w"> </span>/ruta/desti/
+</code></pre></div></td></tr></table></div>
+<p><strong>Sincronitzar un directori local amb un directori remot i eliminar fitxers que no existeixen en l'origen:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>rsync<span class="w"> </span>-av<span class="w"> </span>--delete<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuari@host_remot:/ruta/desti/
+</code></pre></div></td></tr></table></div>
+<p><strong>Sincronitzar un directori local amb un directori remot amb compressió:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>rsync<span class="w"> </span>-avz<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuari@host_remot:/ruta/desti/
+</code></pre></div></td></tr></table></div>
+<p><strong>Sincronitzar un directori local amb un directori remot mostrant el progrés:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>rsync<span class="w"> </span>-avP<span class="w"> </span>-e<span class="w"> </span>ssh<span class="w"> </span>/ruta/origen/<span class="w"> </span>usuari@host_remot:/ruta/desti/
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="question">
+<summary>ACTIVITAT 4: Sincronització amb <em>rsync</em></summary>
+<p>L'objectiu d'aquesta pràctica és aprendre a utilitzar <code>rsync</code> per sincronitzar fitxers i directoris entre un client i un servidor.</p>
+<p>Seguiu les instruccions següents per fer l'activitat.</p>
+<ol>
+<li>Creeu un directori <code>sync_origen</code> al client i afegiu alguns fitxers de text.</li>
+<li>Creeu un directori <code>sync_desti</code> al servidor.</li>
+<li>Utilitzeu <code>rsync</code> per sincronitzar el directori <code>sync_origen</code> del client amb el directori <code>sync_desti</code> del servidor.</li>
+<li>Afegiu nous fitxers al directori <code>sync_origen</code> i torneu a executar <code>rsync</code> per veure com es sincronitzen els canvis.</li>
+</ol>
+<p><strong>Documenta el procés amb captures i comentaris.</strong></p>
+</details>
 
 
 
