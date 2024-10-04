@@ -1180,6 +1180,18 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>scp<span class="w"> </span>-l<span class="w"> </span><span class="m">1000</span><span class="w"> </span>fitxer_local.txt<span class="w"> </span>usuari@host_remot:/ruta/destí/
 </code></pre></div></td></tr></table></div>
 </details>
+<div class="admonition question">
+<p class="admonition-title">PRÀCTICA 3: Copia remota amb <em>scp</em></p>
+<p>Tota l'activitat s'ha de fer des d'un client Lubuntu, loguejat com a <code>remote_user</code>. El Server DHCP ha d'estar en marxa, però no es pot accedir a ell. Fes el següent:</p>
+<ol>
+<li>Crea les carpetes <strong>ENVIAR</strong> i <strong>REBRE</strong> a l'escriptori del client (Recorda, usuari <code>remote_user</code>).</li>
+<li>Crea a la carpeta <em>ENVIAR</em> del client els fitxers <code>exemple.txt</code>, <code>examen.txt</code>, <code>document.pdf</code> i <code>exercici.pdf</code>. Aquests fitxers no han de tindre més de 10MB. Pots fer ús de la comanda <code>fallocate</code>. Crea també un fitxer anomenat <code>mitja</code> de 50MB de tamany i altre fitxer <code>gran</code> de 200MB de tamany.</li>
+<li>Crea la carpeta <strong>REPOS</strong> al directori <code>/home/remote_user</code> del servidor.</li>
+<li>Crea els fitxers <code>server1.txt</code> i <code>server2.txt</code> dins de la carpeta <em>REPOS</em>.</li>
+<li>Copia els fitxers, d'un en un, amb <strong><em>scp</em></strong> entre el client i el servidor: de la carpeta <em>ENVIAR</em> a <em>REPOS</em> i de <em>REPOS</em> a <em>REBRE</em>.</li>
+</ol>
+<p>Documenta tot el procés.</p>
+</div>
 
 
 
