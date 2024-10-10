@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ud2-el-servei-dhcp" class="md-skip">
+        <a href="#ud3-el-servei-dhcp" class="md-skip">
           Salta el contingut
         </a>
       
@@ -599,6 +599,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#problemes-del-servei" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemes del servei
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemes del servei">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atacs-al-funcionament-de-dhcp-i-conflictes-dadreces-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atacs al funcionament de DHCP i conflictes d'adreces IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflictes-amb-les-adreces-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflictes amb les adreces IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diversos-servidors-dhcp-en-la-mateixa-xarxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversos servidors DHCP en la mateixa xarxa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitats
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1029,6 +1080,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#problemes-del-servei" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemes del servei
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemes del servei">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atacs-al-funcionament-de-dhcp-i-conflictes-dadreces-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Atacs al funcionament de DHCP i conflictes d'adreces IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conflictes-amb-les-adreces-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflictes amb les adreces IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diversos-servidors-dhcp-en-la-mateixa-xarxa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diversos servidors DHCP en la mateixa xarxa
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitats
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1044,7 +1146,7 @@
                   
 
 
-<h1 id="ud2-el-servei-dhcp">UD2. El servei DHCP</h1>
+<h1 id="ud3-el-servei-dhcp">UD3. El servei DHCP</h1>
 <h2 id="introduccio">Introducció</h2>
 <p>L’administrador de xarxa té la tasca de configurar els equips que la componen. Això significa configurar els servidors, els equips client, concentradors, encaminadors, etc. Cada equip de la xarxa s’ha d’identificar amb l’adreça IP corresponent i la màscara de xarxa, i generalment disposarà d’un camí d’accés a Internet.</p>
 <p>Tant els usuaris com els serveis requeriran l’accés a altres equips identificant-los pel nom de domini en lloc de fer-ho per l’adreça IP, que és més difícil de recordar. Fer això equip per equip resulta una feina pesada i repetitiva si no es disposa de serveis de xarxa que la faciliten.</p>
@@ -1085,7 +1187,7 @@
 <p>El BOOTP va donar pas al protocol DHCP, que n’és una evolució amb moltes més prestacions. El DHCP sorgeix l’octubre del 1993 a través de l’RFC 1531. Ràpidament evoluciona per mitjà de diverses RFC, com l’RFC 1541 el mateix any 1993, que serà substituïda per l’RFC 2131 el març del 1997. Aquest document és la base del protocol DHCP actual. A grans trets, el protocol es descriu en l’RFC 2131 per a xarxes Ipv4, el conjunt d’opcions de configuració de DHCP es descriuen en l’RFC 2132, i l’especificació de DHCP per a xarxes Ipv6 és en l’RFC 3315.</p>
 <p><strong>PRINCIPALS RFC DEDICADES A DHCP:</strong></p>
 <ul>
-<li>RFC 2131. Març 1997. DHCP dynamic host configuration protocol.ç</li>
+<li>RFC 2131. Març 1997. DHCP dynamic host configuration protocol.</li>
 <li>RFC 2132. DHCP options.</li>
 <li>RFC 3396. Encoding long options.</li>
 <li>RFC 4361. No especific client identifications for dhcpv4.</li>
@@ -1412,6 +1514,71 @@
 </ul>
 </li>
 </ul>
+</details>
+<h2 id="problemes-del-servei">Problemes del servei</h2>
+<h3 id="atacs-al-funcionament-de-dhcp-i-conflictes-dadreces-ip">Atacs al funcionament de DHCP i conflictes d'adreces IP</h3>
+<p>Com tot servei de xarxa, el servidor DHCP és susceptible de patir atacs mal intencionats. L’atac més fàcil i clàssic és el <em>DoS</em> o de denegació de servei. Consisteix a inundar de peticions un servidor per tal de saturar-lo i bloquejar-ne el funcionament. Un client pot realitzar innumerables peticions DHCP <em>discovery</em> fingint que són clients diferents (emmascarant la seva MAC) amb la intenció d’esgotar les adreces IP disponibles del servidor o simplement amb la intenció de sobrecarregar-lo amb tantes peticions que no done a l’abast a atendre-les o que ho faci lentament.</p>
+<p>Un altre tipus d’atac consisteix a falsejar la informació que s’envia al client (DHCP <em>Spoofing</em>). Recordem que el client fa una sol·licitud d’IP en forma de difusió (<em>broadcast</em>) i la seva petició pot ser atesa per un o més servidors DHCP. Un dels servidors DHCP pot ser un atacant que intentarà proporcionar informació de configuració falsa al client. Per exemple indicant un servidor DNS també maliciós. Aquest pot falsejar les identitats de les màquines de la xarxa i, quan el client s’adreça a la seva entitat bancària, el servidor DNS en realitat li ha proporcionat una IP d’una màquina que falseja la de l’entitat bancària. Perillós, veritat?</p>
+<p>Per posar remei a la inseguretat en la comunicació client-servidor DHCP, el protocol permet utilitzar mecanismes d’autenticació i xifratge. Aquests mecanismes queden fora de l’abast d’aquesta explicació.</p>
+<p><center><img alt="DHCP Spoofing" src="../img/ud3/atacDHCP.png" /></center></p>
+<h3 id="conflictes-amb-les-adreces-ip">Conflictes amb les adreces IP</h3>
+<p>Un dels principals motius per utilitzar DHCP és simplificar el procés de configuració de xarxa i minimitzar els conflictes per encavalcament d’adreces IP. Per desgràcia, això no garanteix que no es puguin produir conflictes. Per exemple, ens podem trobar en situacions en què dues màquines diferents tinguin la mateixa IP per una simple mala configuració del servidor DHCP. Un altre cas típic és el d’un client que s’ha configurat ell mateix una IP estàtica quan en la xarxa ja hi havia un equip que utilitzava la mateixa adreça IP assignada pel servidor DHCP.</p>
+<p>Un problema habitual per als administradors poc experimentats és definir una configuració de xarxa local al client (<em>hostname</em>, servidor DNS, porta d’enllaç a utilitzar, etc.), però demanar l’adreça IP dinàmicament. La configuració dinàmica no és solament la IP i la màscara, sinó que el servidor DHCP pot proporcionar altres paràmetres de xarxa que sobreescriuran els que el client tenia definits localment (aquest és l’objectiu de DHCP!).</p>
+<p>La configuració rebuda per DHCP sobreescriu la configuració local del client.</p>
+<h3 id="diversos-servidors-dhcp-en-la-mateixa-xarxa">Diversos servidors DHCP en la mateixa xarxa</h3>
+<p>Un altre dels problemes habituals és que per error o maldat es connecte a la xarxa un altre servidor DHCP que responga primer a les peticions de DHCP <em>Discover</em>. En els entorns corporatius cal tindre control de què es connecta a la xarxa per a evitar problemes. Aquests tipus d'escenaris es poden minimitzar indicant que el servidor és autoritari en el segment de xarxa afectat.</p>
+<h2 id="activitats">Activitats</h2>
+<details class="question">
+<summary>ACTIVITAT 3</summary>
+<p>Quins són els avantatges d’utilitzar un servidor DHCP en una xarxa? Explica'ls.</p>
+</details>
+<details class="question">
+<summary>ACTIVITAT 4</summary>
+<p>Quines diferències hi ha entre una adreça IP i una MAC?</p>
+</details>
+<details class="question">
+<summary>ACTIVITAT 5</summary>
+<p>De quines formes podem assignar una adreça IP amb DHCP? Explica-les.</p>
+</details>
+<details class="question">
+<summary>ACTIVITAT 6</summary>
+<p>Què indica cada línia del següent arxiu de configuració DHCP? Excepte línia 1 i 2.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>authoritative;
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>server-identifier 192.168.1.1;
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>default-lease-time 86400;
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>max-lease-time 86400;
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>option subnet-mask 255.255.255.0;
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>option broadcast-address 192.168.1.255;
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>option routers 192.168.1.1;
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>subnet 192.168.1.0 netmask 255.255.255.0
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>{ 
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>    range 192.168.1.2 192.168.1.10; 
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>    option routers 192.168.1.254;
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>}
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>host fantasia {
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>    hardware ethernet AA:BB:CC:DD:EE:FF;
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a>    fixed-address 192.168.1.2; 
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a>}
+</code></pre></div></td></tr></table></div>
+</details>
+<details class="question">
+<summary>ACTIVITAT 7</summary>
+<p>Investiga què signifiquen les línies 1 i 2 de l'activitat anterior.</p>
 </details>
 
 
