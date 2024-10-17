@@ -22,7 +22,7 @@
     
     
       
-        <title>Solució del problema de duplicació de Machine-ID en màquines clonades de Lubuntu a VirtualBox - Serveis en Xarxa</title>
+        <title>Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa</title>
       
     
     
@@ -67,7 +67,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de Lubuntu a VirtualBox - Serveis en Xarxa" >
+        <meta  property="og:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa" >
       
         <meta  property="og:description"  content="None" >
       
@@ -83,7 +83,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de Lubuntu a VirtualBox - Serveis en Xarxa" >
+        <meta  name="twitter:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-lubuntu-a-virtualbox" class="md-skip">
+        <a href="#solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-base-debian-a-virtualbox" class="md-skip">
           Salta el contingut
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Solució del problema de duplicació de Machine-ID en màquines clonades de Lubuntu a VirtualBox
+              Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox
             
           </span>
         </div>
@@ -680,10 +680,10 @@
                   
 
 
-<h1 id="solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-lubuntu-a-virtualbox">Solució del problema de duplicació de Machine-ID en màquines clonades de Lubuntu a VirtualBox</h1>
+<h1 id="solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-base-debian-a-virtualbox">Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox</h1>
 <h2 id="introduccio">Introducció</h2>
 <p>Quan es configuren màquines virtuals (VM) clonades en VirtualBox, com en el cas d'un escenari DHCP, pot sorgir un problema relacionat amb la duplicació del Machine-ID. Això és especialment rellevant en màquines clonades, ja que la identificació única de la màquina és clau perquè el servidor DHCP pugui assignar adreces IP distintes a cada màquina.</p>
-<p>El Machine-ID és un identificador únic que es genera durant la instal·lació del sistema operatiu. No obstant això, quan es clonen màquines virtuals utilitzant la funcionalitat de clonació enllaçada de VirtualBox, es mantenen els mateixos fitxers del sistema, incloent el Machine-ID, cosa que provoca que les màquines clonades siguin vistes com la mateixa màquina pel servidor DHCP, encara que tinguin diferents adreces MAC.</p>
+<p>El Machine-ID és un identificador únic que es genera durant la instal·lació del sistema operatiu. No obstant això, quan es clonen màquines virtuals utilitzant la funcionalitat de clonació enllaçada de VirtualBox, es mantenen els mateixos fitxers del sistema, incloent el Machine-ID, cosa que provoca que les màquines clonades siguin vistes com la mateixa màquina pel servidor DHCP, encara que tinguen diferents adreces MAC.</p>
 <hr />
 <h2 id="context-del-problema">Context del problema</h2>
 <p>Quan es clona una màquina a VirtualBox, malgrat que es generen noves adreces MAC, els clons comparteixen altres característiques, com ara el Machine-ID. Aquest identificador es guarda al fitxer:</p>
