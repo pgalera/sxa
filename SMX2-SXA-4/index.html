@@ -403,6 +403,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zones-primeries-i-secundaries-transferencies-de-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zones primèries i secundàries. Transferències de zona
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zones primèries i secundàries. Transferències de zona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les zones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-servidors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de servidors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -488,6 +521,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ManSolMachine_id/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Duplicació Machine-id
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -544,6 +598,39 @@
   <a href="#elements-de-lespai-de-noms-de-domini" class="md-nav__link">
     <span class="md-ellipsis">
       Elements de l'espai de noms de domini
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zones-primeries-i-secundaries-transferencies-de-zona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zones primèries i secundàries. Transferències de zona
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Zones primèries i secundàries. Transferències de zona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les zones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipus-de-servidors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipus de servidors
     </span>
   </a>
   
@@ -655,6 +742,42 @@
 <p class="admonition-title">Cal que conegues</p>
 <p>Caràcters en els noms de domini</p>
 <p>L'estàndard DNS indica que els noms de domini han de ser de seixanta-quatre caràcters com a màxim, i només poden incloure caràcters llatins, dígits del 0 al 9 i el guió. Les majúscules i minúscules són indiferents. Hi ha mecanismes com l'IDNA (<em>an internationalized domain name</em> o noms de domini internacionalitzats) per permetre utilitzar altres alfabets en els noms de domini.</p>
+</div>
+<details class="question">
+<summary>Fitxer de hosts</summary>
+<p>El fitxer de hosts és un fitxer informàtic que fa servir un sistema operatiu per mapar noms d'ordinadors cap a adreces IP. Aquest mètode és un dels sistemes per dirigir-se per nom als ordinadors que hi ha a una xarxa informàtica. En alguns sistemes operatius, el fitxer de host es fa servir abans que els altres mètodes, tal com el servei de <em>Domain Name System</em> (DNS). Al contrari que les DNS, el fitxer de host és editable per l'administrador de l'ordinador. El fitxer de hosts és un fitxer de text pla i normalment es diu hosts.</p>
+<p><strong>On es troba el fitxer de hosts en Ubuntu i en Windows?</strong></p>
+<p>Modifica el fitxer hosts en les màquines virtuals de la següent forma:</p>
+<ul>
+<li>ubuntu-server -&gt; adreça IP</li>
+<li>windows -&gt; adreça IP</li>
+</ul>
+<p>De forma que, des del Lubuntu, en fer <code>ping ubunt-server</code> responga el servidor i quan fem <code>ping windows</code> que responga el Windows 11.</p>
+</details>
+<h2 id="zones-primeries-i-secundaries-transferencies-de-zona">Zones primèries i secundàries. Transferències de zona</h2>
+<p>Sabem que el sistema de noms de domini està basat en una arquitectura client-servidor en què els clients faran preguntes del tipus "quina IP té aquest domini?", i els servidors miraran de contestar-les. Els servidors de noms DNS són els programes que emmagatzemen i gestionen la informació en la base de dades d'una part de l'espai de noms anomenada <strong>zona</strong>.</p>
+<h3 id="les-zones">Les zones</h3>
+<p>Una <strong>zona</strong> és part de l'espai de noms de domini gestionada per un (o més) servidors DNS. Els servidors que gestionen la zona tenen informació completa sobre la zona i es diu que tenen <strong>autoritat</strong> respecte a ella. Podríem pensar que un servidor DNS gestiona un domini i que una zona és el mateix que un domini, però això no ha de ser necessàriament així. Un domini es divideix en subdominis per facilitar-ne l'administració, i cada part administrada per un (o més) servidor DNS és una zona. El domini és l'arbre de l'espai de noms i la zona és la part de l'arbre administrada per un servidor de noms de domini concret. En la figura següent es pot veure un espai de noms amb quatre zones i catorze dominis.</p>
+<p><center><img alt="Exemple de zones i dominis" src="../img/ud4/zonesDominis.png" /></center></p>
+<p>En la figura es poden veure tants dominis com requadres de lletres agrupats en quatre zones. El nom de domini corresponent a cada zona (s'anomenen segons el seu node superior) és <strong>A, B.A, C.A, I.C.A</strong>. Cada una d'aquestes quatre zones tindrà un (o més) servidors DNS per gestionar-la.</p>
+<p>En general, podem dir que una zona conté la informació completa dels equips que formen el domini corresponent a la zona i dels equips dels subdominis que no s'hagin delegat. Aquesta informació s'emmagatzema en la <strong>base de dades de zona</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atenció!</p>
+<p>Convé tenir clar en tot moment que domini i zona no són equivalents (tot i que poden coincidir).</p>
+<ul>
+<li>El domini és l'arbre de l'espai de noms.</li>
+<li>La zona és la part de l'arbre administrada per un servidor DNS concret.</li>
+<li>La base de dades de zona la formen els fitxers que emmagatzemen la descripció dels equips que pertanyen a la zona.</li>
+<li>La delegació consisteix a passar l'autoritat de la gestió d'un subdomini a una altra entitat.</li>
+</ul>
+</div>
+<p><strong>Delegar</strong> l'administració d'un subdomini és traspassar l'autoritat sobre aquest subdomini a una altra entitat (a uns altres servidors DNS). Aquesta entitat és la responsable de l'administració de la zona delegada. Té tota l'autoritat per fer i desfer al seu criteri. La zona pare perd el control administratiu de la zona delegada i simplement apunta als servidors de noms de la zona delegada per obtenir informació quan la requereix.</p>
+<h3 id="tipus-de-servidors">Tipus de servidors</h3>
+<p>L'estàndard que defineix el DNS estableix que cal configurar dos o més <strong>servidors autoritaris</strong> per a cada zona anomenats servidor <strong>primari</strong> i servidor <strong>secundari</strong>. El motiu és proporcionar un mecanisme de redundància, robustesa, rendiment i còpia de seguretat. Si el servidor de noms falla i és únic possiblement la xarxa caurà, serà inoperativa.</p>
+<p>Els servidors primari i secundari són autoritat. Només el primari té els fitxers de zona i és l'encarregat d'editar-los. El secundari n'obté una còpia per <strong>transferència de zona</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Servidor DNS caché</p>
+<p>A banda dels servidors primaris (també anomenats <em>mestres</em>) i secundaris (esclaus) esmentats anteriorment hi ha també un altre tipus de servidors, <strong>els servidors DNS caché</strong> (cau). Els servidors DNS caché sols atenen consultes dels clients DNS sobre noms de domini. No conté cap informació sobre la zona i la seua utilitat principal és accelerar les consultes.</p>
 </div>
 
 
