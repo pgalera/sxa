@@ -581,27 +581,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activitats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Activitats
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pràctiques
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mapa-conceptual" class="md-nav__link">
     <span class="md-ellipsis">
       Mapa conceptual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats-i-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitats i Pràctiques
     </span>
   </a>
   
@@ -957,27 +948,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activitats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Activitats
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pràctiques
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#mapa-conceptual" class="md-nav__link">
     <span class="md-ellipsis">
       Mapa conceptual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats-i-practiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitats i Pràctiques
     </span>
   </a>
   
@@ -1128,12 +1110,12 @@
 <p>El mecanisme de resolució de noms DNS consta d'un client o <em>resolver</em> que realitzarà les consultes (o <em>querys</em>) a resoldre a uns servidors DNS.</p>
 <p>Si el servidor disposa de la informació perquè forma part de la base de dades de la seva zona, emetrà una resposta <strong>autoritativa</strong>. Si disposa de la resposta perquè la té emmagatzemada temporalment (en un procés anomenat <em>cache</em>) també emetrà la resposta però aquest cop de manera <strong>no autoritativa</strong>. Si no té informació del domini buscat, el servidor pot fer a altres servidors la mateixa consulta en un procés que pot ser recursiu o iteratiu. Sempre existeix un camí per trobar el domini buscat, que és preguntar als nodes arrel (<em>root servers</em>) de l'espai de noms de domini. Partint dels nodes arrel i recorrent l'arbre cap avall, es pot arribar al domini buscat, si és que existeix.</p>
 <p>Sempre hi ha un camí a un domini existent partint del node arrel. Quan un servidor és consultat sobre un domini que desconeix (no és de la seva zona ni té la resposta en la <em>cache</em>) pot escalar la pregunta a un servidor de l'arrel (<em>root name server</em>). Això significa que els servidors arrel són crucials per al funcionament del DNS.</p>
-<div class="admonition question">
-<p class="admonition-title">Consulta iterativa</p>
+<details class="question">
+<summary>Consulta iterativa</summary>
 <p>Mitjançant l'eina de consulta DNS <code>dig</code> amb les opcions <code>@servidordns</code> i <code>+trace</code> realitza la consulta del domini <strong>wikipedia.org</strong> substituint <code>servidordns</code> per 3 servidors diferents (8.8.8.8, 1.1.1.1, Servidor DNS local).</p>
 <p>Determina la seqüència de les consultes realitzades en els tres casos i compara-les.</p>
 <p>Sempre consulta els mateixos servidors? Per què? Quina ha estat més ràpida? Justifica les respostes.</p>
-</div>
+</details>
 <h3 id="servidors-arrel">Servidors arrel</h3>
 <p>Un servidor arrel de noms és un servidor de noms que respon directament les peticions de registres de la <strong>zona arrel</strong> i respon altres consultes tornant una llista de servidors acreditats de noms del domini de primer nivell adient (TLD). Els servidors arrel de noms són una part crítica de la infraestructura de l'Internet, ja que són el primer pas en la traducció (resolució) dels noms de servidors entenedors pels humans en adreces IP que s'utilitzen entre amfitrions d'Internet.</p>
 <p>Actualment disposem de 13 servidors arrels.</p>
@@ -1196,7 +1178,12 @@
 <p>Un dels principals problemes del protocol DNS (com de tots els primers protocols d'Internet) és la falta de seguretat. Va ser dissenyat en una època de 'bon rotllo' on es confiava amb els altres integrants de la xarxa. Això avui en dia no és massa sensat.</p>
 <p>Imagineu que un atacant aconsegueix el control d'un servidor DNS o aconsegueix fer passar el seu servidor DNS fals com a servidor d'un conjunt d'usuaris. Cada vegada que aquests clients fan una consulta a Internet, per exemple al seu banc (posant el nom de la web), el servidor DNS enverinat proporciona una adreça IP no del banc real sinó d'una web falsa amb la finalitat de...</p>
 <p>Cada cop que accedim a una web, un servei, un host, etc. per mitjà del seu nom de domini, confiem que el servidor DNS proporcioni l'adreça IP correcta. Som confiats, eh?</p>
-<h2 id="activitats">Activitats</h2>
+<h2 id="mapa-conceptual">Mapa conceptual</h2>
+<p><center><img alt="Mapa conceptual - Servei DNS" src="../img/ud4/mapaConcetualDNS.png" /></center></p>
+<p><center><em>Vicent Jordà. Mapa conceptual - Servei DNS (CC BY-NC-SA)</em></center></p>
+<h2 id="activitats-i-practiques">Activitats i Pràctiques</h2>
+<details class="question">
+<summary>Butlletí d'activitats</summary>
 <ol>
 <li>Quina és la funció principal del servei DNS?</li>
 <li>Quines característiques té el servei DNS?</li>
@@ -1211,7 +1198,7 @@
 <li>Busca la pàgina web de ICAAN i explica amb les teues paraules quina és la seua funció.</li>
 <li>Explica amb les teues paraules com funciona un servidor cau (caché).</li>
 </ol>
-<h2 id="practiques">Pràctiques</h2>
+</details>
 <details class="danger">
 <summary>P1. Resolució de noms de dominim amb <code>nslookup</code></summary>
 <p><code>nslookup</code> és una eina que permet fer consultes DNS per resoldre noms de domini i obtenir informació sobre els servidors DNS.</p>
@@ -1328,9 +1315,6 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>ping<span class="w"> </span><span class="m">8</span>.8.8.8
 </code></pre></div></td></tr></table></div>
 </details>
-<h2 id="mapa-conceptual">Mapa conceptual</h2>
-<p><center><img alt="Mapa conceptual - Servei DNS" src="../img/ud4/mapaConcetualDNS.png" /></center></p>
-<p><center><em>Vicent Jordà. Mapa conceptual - Servei DNS (CC BY-NC-SA)</em></center></p>
 
 
 
