@@ -10,28 +10,26 @@
         <meta name="author" content="Paco Galera & Javier Beteta">
       
       
-        <link rel="canonical" href="https://pgalera.github.io/sxa/CanviMirror/">
+        <link rel="canonical" href="https://pgalera.github.io/sxa/manuals/ManSolMachine_id/">
       
       
-        <link rel="prev" href="../SMX2-SXA-4/">
+        <link rel="prev" href="../ManUbuntuServerDocker/">
       
       
-        <link rel="next" href="../ManUbuntuServerDocker/">
       
-      
-      <link rel="icon" href="../img/logojaume.png">
+      <link rel="icon" href="../../img/logojaume.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
     
     
       
-        <title>Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa</title>
+        <title>Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -69,11 +67,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa" >
+        <meta  property="og:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/CanviMirror.png" >
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/manuals/ManSolMachine_id.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +79,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pgalera.github.io/sxa/CanviMirror/" >
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/manuals/ManSolMachine_id/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Canvi del Mirror en Ubuntu 24.04 LTS - Serveis en Xarxa" >
+        <meta  name="twitter:title"  content="Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox - Serveis en Xarxa" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/CanviMirror.png" >
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/manuals/ManSolMachine_id.png" >
       
     
     
@@ -112,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#canvi-del-mirror-en-ubuntu-2404-lts" class="md-skip">
+        <a href="#solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-base-debian-a-virtualbox" class="md-skip">
           Salta el contingut
         </a>
       
@@ -128,9 +126,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
-    <a href=".." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+    <a href="../.." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
       
-  <img src="../img/logojaume.png" alt="logo">
+  <img src="../../img/logojaume.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -147,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Canvi del Mirror en Ubuntu 24.04 LTS
+              Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox
             
           </span>
         </div>
@@ -248,9 +246,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+    <a href="../.." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
       
-  <img src="../img/logojaume.png" alt="logo">
+  <img src="../../img/logojaume.png" alt="logo">
 
     </a>
     Serveis en Xarxa
@@ -265,7 +263,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-1/" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SMX2-SXA-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,7 +303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-2/" class="md-nav__link">
+      <a href="../../SMX2-SXA-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -305,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-3/" class="md-nav__link">
+      <a href="../../SMX2-SXA-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -325,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-4/" class="md-nav__link">
+      <a href="../../SMX2-SXA-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -354,10 +372,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -368,8 +386,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Manuals
           </label>
@@ -379,94 +397,18 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Canvi de Mirror
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../CanviMirror/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Canvi de Mirror
+    Canvi de Mirror en Ubuntu
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#localitzant-el-fitxer-de-fonts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Localitzant el fitxer de fonts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canviant-el-mirror" class="md-nav__link">
-    <span class="md-ellipsis">
-      Canviant el mirror
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-tenir-en-compte" class="md-nav__link">
-    <span class="md-ellipsis">
-      A tenir en compte
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mes-info" class="md-nav__link">
-    <span class="md-ellipsis">
-      Més info
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -497,10 +439,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ManSolMachine_id/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Duplicació Machine-id
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -509,6 +471,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducció
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-del-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context del problema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucio-regenerar-el-machine-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solució: Regenerar el Machine-ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solució: Regenerar el Machine-ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-el-machine-id-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar el Machine-ID actual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-lantic-machine-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar l'antic Machine-ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regenerar-el-machine-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regenerar el Machine-ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-la-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reiniciar la màquina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificar-que-el-problema-sha-solucionat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar que el problema s'ha solucionat
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -548,36 +608,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#localitzant-el-fitxer-de-fonts" class="md-nav__link">
+  <a href="#introduccio" class="md-nav__link">
     <span class="md-ellipsis">
-      Localitzant el fitxer de fonts
+      Introducció
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#canviant-el-mirror" class="md-nav__link">
+  <a href="#context-del-problema" class="md-nav__link">
     <span class="md-ellipsis">
-      Canviant el mirror
+      Context del problema
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-tenir-en-compte" class="md-nav__link">
+  <a href="#solucio-regenerar-el-machine-id" class="md-nav__link">
     <span class="md-ellipsis">
-      A tenir en compte
+      Solució: Regenerar el Machine-ID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solució: Regenerar el Machine-ID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-el-machine-id-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar el Machine-ID actual
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-lantic-machine-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar l'antic Machine-ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regenerar-el-machine-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regenerar el Machine-ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reiniciar-la-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reiniciar la màquina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#mes-info" class="md-nav__link">
+  <a href="#verificar-que-el-problema-sha-solucionat" class="md-nav__link">
     <span class="md-ellipsis">
-      Més info
+      Verificar que el problema s'ha solucionat
     </span>
   </a>
   
@@ -598,57 +700,41 @@
                   
 
 
-<h1 id="canvi-del-mirror-en-ubuntu-2404-lts">Canvi del Mirror en Ubuntu 24.04 LTS</h1>
-<p>Degut al mal funcionament del mirror oficial d'Ubuntu a la xarxa de Conselleria, haurem de canviar el mirror dels nostres sistemes.</p>
-<h2 id="localitzant-el-fitxer-de-fonts">Localitzant el fitxer de fonts</h2>
-<p>Antigament, els mirrors d'ubuntu anaven definits al fitxer <code>/etc/apt/sources.list</code>. Però ja fa varies versions, que aquest fitxer ens envia a un directori on podem tindre diversos fitxers de mirrors. A la versió 24.04 es fa ús d'un fitxer localitzat en <code>/etc/apt/sources.list.d/ubuntu.sources</code> on podem trobar els mirrors en format descriptiu (antigament s'emprava el format <em>en una sola linia</em>).</p>
-<h2 id="canviant-el-mirror">Canviant el mirror</h2>
-<p>Per tant, el que farem serà consultar aquest fitxer i editar-lo:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/apt/sources.list.d/ubuntu.sources
+<h1 id="solucio-del-problema-de-duplicacio-de-machine-id-en-maquines-clonades-de-base-debian-a-virtualbox">Solució del problema de duplicació de Machine-ID en màquines clonades de base Debian a VirtualBox</h1>
+<h2 id="introduccio">Introducció</h2>
+<p>Quan es configuren màquines virtuals (VM) clonades en VirtualBox, com en el cas d'un escenari DHCP, pot sorgir un problema relacionat amb la duplicació del Machine-ID. Això és especialment rellevant en màquines clonades, ja que la identificació única de la màquina és clau perquè el servidor DHCP pugui assignar adreces IP distintes a cada màquina.</p>
+<p>El Machine-ID és un identificador únic que es genera durant la instal·lació del sistema operatiu. No obstant això, quan es clonen màquines virtuals utilitzant la funcionalitat de clonació enllaçada de VirtualBox, es mantenen els mateixos fitxers del sistema, incloent el Machine-ID, cosa que provoca que les màquines clonades siguin vistes com la mateixa màquina pel servidor DHCP, encara que tinguen diferents adreces MAC.</p>
+<hr />
+<h2 id="context-del-problema">Context del problema</h2>
+<p>Quan es clona una màquina a VirtualBox, malgrat que es generen noves adreces MAC, els clons comparteixen altres característiques, com ara el Machine-ID. Aquest identificador es guarda al fitxer:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>/etc/machine-id
 </code></pre></div></td></tr></table></div>
-<p>canviant el contingut del fitxer perquè faça ús del mirror del <strong><em>Centro Informático Científico de Andalucia (CICA)</em></strong>, deixant el fitxer així:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>URIs:<span class="w"> </span>http://ubuntu.cica.es/ubuntu/
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<p>El servidor DHCP utilitza tant la MAC address com el Machine-ID per identificar els clients. Si el Machine-ID és el mateix per a totes les màquines clonades, el servidor DHCP els assignarà la mateixa IP, independentment de la diferència de MAC address.</p>
+<hr />
+<h2 id="solucio-regenerar-el-machine-id">Solució: Regenerar el Machine-ID</h2>
+<p>Per solucionar aquest problema, cal regenerar un nou Machine-ID per a cada màquina clonada. A continuació, es detallen els passos per fer-ho.</p>
+<h3 id="verificar-el-machine-id-actual">Verificar el Machine-ID actual</h3>
+<p>Per comprovar quin és el Machine-ID actual, pots executar el següent comandament:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>cat<span class="w"> </span>/etc/machine-id
 </code></pre></div></td></tr></table></div>
-<p><strong>NOTA</strong>: no és necessari escriure-ho tot de zero, serà suficient amb canviar algunes linies!</p>
-<p>Una vegada modificat el fitxer, el guardem i actualitzem les fonts del sistema:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<h3 id="eliminar-lantic-machine-id">Eliminar l'antic Machine-ID</h3>
+<p>Per generar un nou Machine-ID, primer cal eliminar l'actual:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>/etc/machine-id
 </code></pre></div></td></tr></table></div>
-<h2 id="a-tenir-en-compte">A tenir en compte</h2>
-<p>En el moment de crear aquest manual (Octubre 2024), el mirror del CICA és un dels que millor funciona des de la xarxa del centre. Però existeixen altres, com el de la <em>Universidad de Zaragoza</em> que també funcionen bé. Per tal de canviar-lo, sols hauriem d'editar la línia que fa referència a aquest (URIs):</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>URIs:<span class="w"> </span>http://softlibre.unizar.es/ubuntu/archive/
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<h3 id="regenerar-el-machine-id">Regenerar el Machine-ID</h3>
+<p>Un cop eliminat l'antic Machine-ID, pots generar un de nou amb la següent comanda:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>systemd-machine-id-setup
 </code></pre></div></td></tr></table></div>
-<p>o inclús tindre els dos posats:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>Types:<span class="w"> </span>deb<span class="w"> </span>deb-src
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>URIs:<span class="w"> </span>http://ubuntu.cica.es/ubuntu/<span class="w"> </span>http://softlibre.unizar.es/ubuntu/archive/
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>Suites:<span class="w"> </span>noble<span class="w"> </span>noble-security<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+<h3 id="reiniciar-la-maquina">Reiniciar la màquina</h3>
+<p>Després de regenerar el Machine-ID, reinicia la màquina per aplicar els canvis:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>reboot
 </code></pre></div></td></tr></table></div>
 <hr />
-<h2 id="mes-info">Més info</h2>
-<ul>
-<li><a href="https://manpages.ubuntu.com/manpages/noble/en/man5/sources.list.5.html">Ubuntu Manuals</a></li>
-</ul>
+<h2 id="verificar-que-el-problema-sha-solucionat">Verificar que el problema s'ha solucionat</h2>
+<p>Després de reiniciar la màquina, pots verificar que el Machine-ID s'ha canviat:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>cat<span class="w"> </span>/etc/machine-id
+</code></pre></div></td></tr></table></div>
+<p>Ara, quan les màquines clonades es connectin al servidor DHCP, haurien de rebre adreces IP diferents, ja que tant la MAC address com el Machine-ID seran únics.</p>
 
 
 
@@ -689,7 +775,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
         
           
-          <a href="../SMX2-SXA-4/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: UD4. El servei DNS">
+          <a href="../ManUbuntuServerDocker/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Docker en Ubuntu Server">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -699,27 +785,11 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                UD4. El servei DNS
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../ManUbuntuServerDocker/" class="md-footer__link md-footer__link--next" aria-label="Següent: Docker en Ubuntu Server">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Següent
-              </span>
-              <div class="md-ellipsis">
                 Docker en Ubuntu Server
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
@@ -819,10 +889,10 @@
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
     
   </body>

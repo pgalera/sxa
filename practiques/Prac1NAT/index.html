@@ -10,24 +10,24 @@
         <meta name="author" content="Paco Galera & Javier Beteta">
       
       
-        <link rel="canonical" href="https://pgalera.github.io/sxa/Prac1NAT/">
+        <link rel="canonical" href="https://pgalera.github.io/sxa/practiques/Prac1NAT/">
       
       
       
       
-      <link rel="icon" href="../img/logojaume.png">
+      <link rel="icon" href="../../img/logojaume.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
     
     
       
-        <title>Pràctica UD1. NAT amb Ubuntu Server 24.04 - Serveis en Xarxa</title>
+        <title>UD1 - Pràctica 1 - NAT amb Ubuntu Server 24.04 - Serveis en Xarxa</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -65,11 +65,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Pràctica UD1. NAT amb Ubuntu Server 24.04 - Serveis en Xarxa" >
+        <meta  property="og:title"  content="UD1 - Pràctica 1 - NAT amb Ubuntu Server 24.04 - Serveis en Xarxa" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/Prac1NAT.png" >
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac1NAT.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -77,15 +77,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pgalera.github.io/sxa/Prac1NAT/" >
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/practiques/Prac1NAT/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Pràctica UD1. NAT amb Ubuntu Server 24.04 - Serveis en Xarxa" >
+        <meta  name="twitter:title"  content="UD1 - Pràctica 1 - NAT amb Ubuntu Server 24.04 - Serveis en Xarxa" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/Prac1NAT.png" >
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac1NAT.png" >
       
     
     
@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-ud1-nat-amb-ubuntu-server-2404" class="md-skip">
+        <a href="#ud1-practica-1-nat-amb-ubuntu-server-2404" class="md-skip">
           Salta el contingut
         </a>
       
@@ -124,9 +124,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Capçalera">
-    <a href=".." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+    <a href="../.." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
       
-  <img src="../img/logojaume.png" alt="logo">
+  <img src="../../img/logojaume.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pràctica UD1. NAT amb Ubuntu Server 24.04
+              UD1 - Pràctica 1 - NAT amb Ubuntu Server 24.04
             
           </span>
         </div>
@@ -244,9 +244,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+    <a href="../.." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
       
-  <img src="../img/logojaume.png" alt="logo">
+  <img src="../../img/logojaume.png" alt="logo">
 
     </a>
     Serveis en Xarxa
@@ -261,7 +261,27 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-1/" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SMX2-SXA-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -281,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-2/" class="md-nav__link">
+      <a href="../../SMX2-SXA-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -301,7 +321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-3/" class="md-nav__link">
+      <a href="../../SMX2-SXA-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -321,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMX2-SXA-4/" class="md-nav__link">
+      <a href="../../SMX2-SXA-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,10 +368,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -362,8 +382,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Manuals
           </label>
@@ -376,11 +396,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CanviMirror/" class="md-nav__link">
+      <a href="../../manuals/CanviMirror/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Canvi de Mirror
+    Canvi de Mirror en Ubuntu
   </span>
   
 
@@ -397,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ManUbuntuServerDocker/" class="md-nav__link">
+      <a href="../../manuals/ManUbuntuServerDocker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ManSolMachine_id/" class="md-nav__link">
+      <a href="../../manuals/ManSolMachine_id/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,8 +608,8 @@
                   
 
 
-<h1 id="practica-ud1-nat-amb-ubuntu-server-2404">Pràctica UD1. NAT amb Ubuntu Server 24.04</h1>
-<p><center><img alt="Esquema de xarxa" src="../img/esquemaNat.png" /></center></p>
+<h1 id="ud1-practica-1-nat-amb-ubuntu-server-2404">UD1 - Pràctica 1 - NAT amb Ubuntu Server 24.04</h1>
+<p><center><img alt="Esquema de xarxa" src="../../img/esquemaNat.png" /></center></p>
 <p>Aquest document descriu la configuració de xarxa d'un laboratori de xarxes muntat amb VirtualBox, format per dues màquines virtuals: un Ubuntu Server 24.04 i un Lubuntu 24.04. A continuació es descriu la configuració de cada màquina, la connectivitat entre elles i els passos per configurar la passarel·la per permetre l'accés a Internet des del Lubuntu a través de l'Ubuntu Server.</p>
 <h2 id="configuracio-de-les-maquines">Configuració de les màquines</h2>
 <h3 id="ubuntu-server-2404">Ubuntu Server 24.04</h3>
@@ -718,7 +738,7 @@ Aplicar el canvi amb:
 <a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="resum-nat">Resum NAT</h2>
-<p><center><img alt="How Nat works" src="../img/NATworks.jpg" /></center></p>
+<p><center><img alt="How Nat works" src="../../img/NATworks.jpg" /></center></p>
 
 
 
@@ -851,10 +871,10 @@ Aplicar el canvi amb:
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
     
   </body>
