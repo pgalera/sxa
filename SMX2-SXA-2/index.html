@@ -1048,14 +1048,29 @@
 <li>Les claus privades permeten signar un missatge per tal que el receptor verifiqui la identitat de l’emissor. La comprovació de la signatura es farà mitjançant la clau pública associada.</li>
 </ul>
 <p>En una comunicació típica tindrem els passos que es mostren a continuació i que podeu veure de manera gràfica en la figura:</p>
-<p><center><img alt="Comunicació amb clau pública" src="../img/comunicaci%C3%B3ClauP%C3%BAblica.png" width="100%" /></center></p>
+<p><center>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Emissor
+    participant Receptor
+
+    Emissor-&gt;&gt;Receptor: Genera clau pública i clau privada
+    Receptor--&gt;&gt;Emissor: Envia la clau pública al remitent
+    Emissor-&gt;&gt;Emissor: Xifra el missatge amb la clau pública del receptor
+    Emissor-&gt;&gt;Receptor: Envia el missatge xifrat
+    Receptor-&gt;&gt;Receptor: Desxifra el missatge amb la seva clau privada
+    Receptor--&gt;&gt;Emissor: Llegeix el missatge desxifrat</code></pre>
+</center></p>
+<p>Aquest diagrama il·lustra el procés pas a pas del xifratge en clau pública:</p>
 <ol>
-<li>L’emissor farà servir la seva pròpia clau privada per signar el missatge.</li>
-<li>L’emissor farà servir la clau pública del receptor per encriptar el missatge.</li>
-<li>Es transmet el missatge encriptat i signat.</li>
-<li>El receptor desencriptarà el missatge fent servir la seva pròpia clau privada.</li>
-<li>El receptor comprovarà la signatura del missatge fent servir la clau pública de l’emissor.</li>
+<li>El receptor genera una parella de claus: una clau pública i una clau privada.</li>
+<li>El receptor envia la clau pública a l'emissor.</li>
+<li>L'emissor utilitza la clau pública per xifrar el missatge.</li>
+<li>L'emissor envia el missatge xifrat al receptor.</li>
+<li>El receptor desxifra el missatge amb la seva clau privada.</li>
+<li>Finalment, el receptor pot llegir el missatge en text clar.</li>
 </ol>
+<p>Aquest procés garanteix la confidencialitat del missatge, ja que només el receptor pot desxifrar-lo amb la seva clau privada.</p>
 <p>En aquest procediment mai no es transmeten les claus privades. L’intercanvi de les claus públiques és senzill, ja que no cal que es transmetin fent ús d’un canal segur. Es garanteix que el missatge no pot ser compromès en la seva transmissió i tant l’emissor com el receptor comproven l’autenticitat de l’altra entitat.</p>
 <p>El principal inconvenient de la criptografia de clau pública és el seu consum de recursos. És més costosa en temps d’encriptació/desencriptació i el missatge encriptat ocupa més que el text clar. En la taula següent podeu veure un resum dels principals avantatges i inconvenients de les diferents tècniques criptogràfiques.</p>
 <h5 id="criptografia-hibrida">Criptografia híbrida</h5>
@@ -1105,7 +1120,18 @@
 <h5 id="la-negociacio-del-xifrat-per-a-la-sessio-ssh">La negociació del xifrat  per a la sessió SSH</h5>
 <p>Quan un client es connecta, el servidor respon amb les versions de protocol que suporta. Si el client accepta alguna de les versions de protocol suportades, la connexió continua. El servidor també proporciona la seva clau pública, que el client pot utilitzar per comprovar si el servidor és realment el que diu ser. En aquest punt, les dues parts negocien una clau de sessió.</p>
 <p>La clau de sessió (simètrica) serà utilitzada per xifrar tota la sessió. Els parells de claus públiques i privades que s'utilitzen en aquesta negociació són totalment independents de les claus SSH utilitzades per autenticar un client al servidor. Aquestes claus públiques s'usaran per a compartir la clau de sessió creada i per a xifrar totes de les comunicacions que es duguen a terme durant la sessió.</p>
-<p><center><img alt="Xifrat SSH" src="../img/xifratSSH.png" width="100%" /></center></p>
+<p><center>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Servidor
+
+    Client-&gt;&gt;Servidor: El Client inicia la connexió
+    Servidor--&gt;Client: Servidor i Client negocien la versió del protocol i l'agoritme de xifrat (simètric)
+    Servidor-&gt;&gt;Client: El Servidor envia la seua clau pública
+    Client-&gt;&gt;Client: Comprovació de la identitat del servidor (clau pública)
+    Client-&gt;&gt;Servidor: El client genera una clau de sessió (simètrica) que serà encriptada amb la clau pública del servidor (asimètrica)
+    Servidor--&gt;Client: La clau de sessió i l'algoritme seleccionat s'usaran per a encriptar l'intercanvi de dades</code></pre>
+</center></p>
 <h4 id="metodes-dautenticacio-del-servei-ssh">Mètodes d'autenticació del servei SSH</h4>
 <p>L’autenticació és l’acció de comprovar la identitat del remitent en una comunicació. El servidor SSH, en rebre una sol·licitud de connexió nova, necessita autenticar l’origen d’aquesta connexió com a pas previ per autoritzar o denegar la connexió.</p>
 <p>El servidor SSH pot emprar  diversos mecanismes diferents d’autenticació. Entre aquests mecanismes destaquem, per ordre de preferència:</p>

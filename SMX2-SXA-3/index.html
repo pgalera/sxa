@@ -1265,7 +1265,17 @@
 <h3 id="udp-en-les-transmissions-dhcp">UDP en les transmissions DHCP</h3>
 <p>L’intercanvi d’informació entre client i servidor no és massa gran (poc volum de dades) i no requereix un flux permanent (una conversa continuada). És per això que el protocol que s’utilitza en les transmissions DHCP és l’UDP.</p>
 <p>La concessió de l’adreça IP és per un període de temps establert pel servidor. Això significa que, transcorregut aquest període, el client haurà de renegociar la concessió en un procés similar al descrit anteriorment.</p>
-<p><center><img alt="Protocol DHCP. DORA" src="../img/ud3/protocolDHCP.png" /></center></p>
+<p><center>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Client
+    participant Server
+
+    Client-&gt;&gt;Server: DHCP Discover (broadcast)
+    Server--&gt;&gt;Client: DHCP Offer (unicast o broadcast)
+    Client-&gt;&gt;Server: DHCP Request (broadcast)
+    Server--&gt;&gt;Client: DHCP Acknowledgment (unicast o broadcast)</code></pre>
+</center></p>
 <p>El procés real, però, és més detallat. El podem repassar: consta principalment de quatre parts: la petició del client o <strong><em>discovery</em></strong>, l’oferta del servidor o <strong><em>offer</em></strong>, l’acceptació de l’adreça IP pel client o <strong><em>request</em></strong>, i la confirmació del servidor o <strong><em>acknowledgement</em></strong>. A part d’aquest tipus de missatges, el protocol DHCP en defineix d’altres com el de petició d’informació o <em>information</em> i el d’alliberament de l’adreça IP o <em>releasing</em>.</p>
 <p>Els següents són els tipus de paquets DHCP:</p>
 <ul>
