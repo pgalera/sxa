@@ -1276,45 +1276,48 @@
 <li>Anàlisi dels resultats: Hi ha alguna diferència en els resultats?</li>
 </ul>
 </details>
-<details class="danger">
-<summary>P3. Resolució inversa d'IPs i TTL amb <code>host</code> i <code>ping</code></summary>
-<p>La resolució inversa és el procés de convertir una adreça IP en un nom de domini. Això pot ser útil per identificar a qui pertany una adreça IP.</p>
-<p>TTL (<em>time to live</em>) és el temps que un registre DNS pot ser emmagatzemat en memòria cau (cache) abans de necessitar ser actualitzat. Com més curt sigui el TTL, més sovint es farà la consulta al servidor DNS autoritatiu.</p>
-<p>La comanda <code>ping</code> mesura el temps que tarda un paquet de dades a viatjar des del teu ordinador fins a un servidor i tornar. És una eina clau per mesurar la latència i la connectivitat.</p>
-<p><strong>Resolució inversa amb <code>host</code>:</strong></p>
-<ul>
-<li>Utilitza la comanda <code>host</code> per veure quin domini està associat a una adreça IP, per exemple, la de Google DNS:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>host<span class="w"> </span><span class="m">8</span>.8.8.8
+<!-- ???danger "P3. Resolució inversa d'IPs i TTL amb `host` i `ping`"
+
+    La resolució inversa és el procés de convertir una adreça IP en un nom de domini. Això pot ser útil per identificar a qui pertany una adreça IP.
+
+    TTL (*time to live*) és el temps que un registre DNS pot ser emmagatzemat en memòria cau (cache) abans de necessitar ser actualitzat. Com més curt sigui el TTL, més sovint es farà la consulta al servidor DNS autoritatiu.
+
+    La comanda `ping` mesura el temps que tarda un paquet de dades a viatjar des del teu ordinador fins a un servidor i tornar. És una eina clau per mesurar la latència i la connectivitat.
+
+    **Resolució inversa amb `host`:**
+
+    - Utilitza la comanda `host` per veure quin domini està associat a una adreça IP, per exemple, la de Google DNS:
+
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>host<span class="w"> </span><span class="m">8</span>.8.8.8
 </code></pre></div></td></tr></table></div>
-<ul>
-<li>Anàlisi dels resultats: Quin nom de domini està associat a aquesta IP?</li>
-</ul>
-<p><strong>Consulta del TTL amb <code>dig</code>:</strong></p>
-<ul>
-<li>Utilitza <code>dig</code> per veure el valor del TTL d'un domini:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>dig<span class="w"> </span>google.com
+
+    - Anàlisi dels resultats: Quin nom de domini està associat a aquesta IP?
+
+    **Consulta del TTL amb `dig`:**
+
+    - Utilitza `dig` per veure el valor del TTL d'un domini:
+
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>dig<span class="w"> </span>google.com
 </code></pre></div></td></tr></table></div>
-<ul>
-<li>Anàlisi dels resultats: Quants segons falten per a la caducitat del registre DNS a la memòria cau? Això afecta la velocitat amb què es poden fer noves consultes al DNS.</li>
-</ul>
-<p><strong>Mesura de la latència amb <code>ping</code>:</strong></p>
-<ul>
-<li>Utilitza la comanda <code>ping</code> per mesurar la latència cap a un servidor com <code>google.com</code>:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>ping<span class="w"> </span>google.com
+
+    - Anàlisi dels resultats: Quants segons falten per a la caducitat del registre DNS a la memòria cau? Això afecta la velocitat amb què es poden fer noves consultes al DNS.
+
+    **Mesura de la latència amb `ping`:**
+
+    - Utilitza la comanda `ping` per mesurar la latència cap a un servidor com `google.com`:
+
+     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>ping<span class="w"> </span>google.com
 </code></pre></div></td></tr></table></div>
-<ul>
-<li>**Anàlisi dels resultats: Quins són els temps de resposta? Quin impacte pot tenir la distància geogràfica i altres factors a la latència?</li>
-</ul>
-<p><strong>Ping a una IP específica:</strong></p>
-<ul>
-<li>Prova de fer un <code>ping</code> a la IP 8.8.8.8 (Google DNS) i compara el temps de resposta amb el de <code>google.com</code>:</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>ping<span class="w"> </span><span class="m">8</span>.8.8.8
-</code></pre></div></td></tr></table></div>
-</details>
+
+    - **Anàlisi dels resultats: Quins són els temps de resposta? Quin impacte pot tenir la distància geogràfica i altres factors a la latència?
+
+    **Ping a una IP específica:**
+
+    - Prova de fer un `ping` a la IP 8.8.8.8 (Google DNS) i compara el temps de resposta amb el de `google.com`:
+
+     ```bash
+     ping 8.8.8.8
+     ```  -->
 
 
 
