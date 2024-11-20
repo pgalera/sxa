@@ -1,0 +1,1163 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Paco Galera & Javier Beteta">
+      
+      
+        <link rel="canonical" href="https://pgalera.github.io/sxa/SMX2-SXA-5/">
+      
+      
+        <link rel="prev" href="../SMX2-SXA-4/">
+      
+      
+        <link rel="next" href="../manuals/CanviMirror/">
+      
+      
+      <link rel="icon" href="../img/logojaume.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>UD5. El servei HTTP - Serveis en Xarxa</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-GJ8MB56SLW"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-GJ8MB56SLW",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-GJ8MB56SLW",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="UD5. El servei HTTP - Serveis en Xarxa" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/SMX2-SXA-5.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/SMX2-SXA-5/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="UD5. El servei HTTP - Serveis en Xarxa" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/SMX2-SXA-5.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud5-el-servei-http" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href=".." title="Serveis en Xarxa" class="md-header__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+      
+  <img src="../img/logojaume.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Serveis en Xarxa
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD5. El servei HTTP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Serveis en Xarxa" class="md-nav__button md-logo" aria-label="Serveis en Xarxa" data-md-component="logo">
+      
+  <img src="../img/logojaume.png" alt="logo">
+
+    </a>
+    Serveis en Xarxa
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD1. Interconnexió de xarxes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD2. Accés remot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD3. El servei DHCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SMX2-SXA-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UD4. El servei DNS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UD5. El servei HTTP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UD5. El servei HTTP
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducció
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-protocol-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      El protocol HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El protocol HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-poc-dhistoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un poc d'història
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carcateristiques-dhttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carcaterístiques d'HTTP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etapes-duna-transaccio-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapes d'una transacció HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lestandard-http10" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'estandard HTTP/1.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-i-configuracio-dapache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació i configuració d'Apache2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació i configuració d'Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directives-importants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directives importants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directives importants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directiva-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;Directory&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directiva-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;Files&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directiva-virtualhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;VirtualHost&gt;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manuals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manuals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuals/CanviMirror/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Canvi de Mirror en Ubuntu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuals/ManUbuntuServerDocker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker en Ubuntu Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuals/ManSolMachine_id/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Duplicació Machine-id
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducció
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-protocol-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      El protocol HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El protocol HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-poc-dhistoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un poc d'història
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carcateristiques-dhttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carcaterístiques d'HTTP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etapes-duna-transaccio-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapes d'una transacció HTTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lestandard-http10" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'estandard HTTP/1.0
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-i-configuracio-dapache2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació i configuració d'Apache2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació i configuració d'Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directives-importants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directives importants
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Directives importants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directiva-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;Directory&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directiva-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;Files&gt;
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directiva-virtualhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directiva &lt;VirtualHost&gt;
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ud5-el-servei-http">UD5. El servei HTTP</h1>
+<h2 id="introduccio">Introducció</h2>
+<p>Amb l'evolució i l'accés lliure a Internet, un dels principals al·licients que han sorgit és la publicació de pàgines web on es poden emmagatzemar uns continguts molt atractius per a nosaltres i que, alhora, poden ser consultats des d'arreu del món per tothom.</p>
+<p>Val a dir que, amb la popularització d'Internet, tant empreses com usuaris han vist la necessitat d'establir un punt des d'on anunciar els seus productes, o bé, a títol particular, donar publicitat a les aficions o capacitats personals mitjançant la publicació de pàgines web.</p>
+<p>Les pàgines web, en la seva majoria en format HTML, requereixen ser allotjades en màquines que disposen d’espai en disc per emmagatzemar arxius HTML, imatges, blocs de codi o arxius de vídeo en directoris específics i, alhora, han de ser capaces d'entendre tot tipus d'extensió dels arxius que són enviats en tots dos sentits de la comunicació.</p>
+<p>Paral·lelament, no podem deixar de banda la importància de les mesures de seguretat davant dels perills existents a Internet. Per aconseguir-ho, les pàgines hauran d'estar dissenyades considerant la incorporació de protocols de comunicació segurs com, per exemple, els desenvolupats amb el protocol segur de transferència d'hipertext (HTTPS, hypertext transfer protocol secure) que utilitzen claus i estratègies de xifrat pròpies de les eines del protocol de capa de connexió segura (SSL, secure sockets layer).</p>
+<p>Les màquines que allotgen les pàgines web reben la categoria de <strong>servidors web</strong>. Des del punt de vista dels servidors, els requeriments més rellevants són l'espai de disc necessari per poder emmagatzemar l'estructura de la pàgina web i una bona connexió de xarxa perquè el consum de la unitat de processament central (CPU, central processing unit) siga prou baix.</p>
+<p>El funcionament dels servidors web és especial ja que, com si es tractés d'una dent de serra, tenen consums de recursos puntuals perquè podem estar un temps sense peticions i, de cop i volta, tenir una allau de peticions. Això fa que els servidors web acostumen a tindre un nombre baix de processos en espera. A mesura que esdevenen necessaris, se'n van arrencant de nous.</p>
+<p>Val a dir que no totes les peticions consumeixen el mateix, i, per exemple, aquelles pàgines web que executen programes d’interacció amb l’usuari o requereixen xifrat (HTTPS) consumeixen més recursos que altres pàgines web amb menys interacció.</p>
+<h2 id="el-protocol-http">El protocol HTTP</h2>
+<h3 id="un-poc-dhistoria">Un poc d'història</h3>
+<p>El protocol de transferència d’hipertext (HTTP, hyperText transfer protocol) és el motor que dóna vida a Internet, ja que és la base per a la web (<em>www, world wide web</em>).</p>
+<p>Des d’un punt de vista històric, la web fou creada l'any 1989 al Consell Europeu per la Recerca Nuclear (<em>CERN, Centre Europeene pour la Recherche Nucleaire</em>), amb seu a Ginebra, just a la frontera entre Suïssa i França. Aquest organisme disposava (i disposa) d’una àmplia plantilla de científics de diferents països d’Europa que treballen en els seus acceleradors de partícules. En conseqüència, molts equips de treballadors estan integrats per membres de nacionalitats diferents. A més, molts dels experiments que s’hi fan destaquen per la seva complexitat i requereixen anys i anys de planificació i de construcció d’equipaments.</p>
+<p>Fou arran de la necessitat de disposar de múltiples grups de científics repartits pel món i col·laborant entre ells (enviant-se informes, dibuixos, esquemes, fotos i tot tipus de documents) que va néixer la web.</p>
+<p>És en els inicis del protocol HTTP, a mitjans de l’any 1990, quan trobem la versió 0.9. Aquesta versió tenia com a única finalitat transferir dades per Internet en forma de pàgines web escrites en llenguatge de marcatge d’hipertext (<em>HTML, HyperText Markup Language</em>). A partir de la versió 1.0 del protocol va sorgir la possibilitat de transferir missatges amb encapçalaments que descrivien el contingut dels missatges.</p>
+<h3 id="carcateristiques-dhttp">Carcaterístiques d'HTTP</h3>
+<p>El protocol de transferència d’hipertext (HTTP) és un protocol <strong>client-servidor</strong> molt senzill que articula els intercanvis d'informació entre els clients web i els servidors HTTP. HTTP va ser desenvolupat pel consorci W3C i la IETF. Aquesta col·laboració va culminar l’any 1999 amb la publicació d'una sèrie de RFC, el més important dels quals va ser el <strong>RFC 2616</strong>, que especificava la versió 1.1</p>
+<div class="admonition info">
+<p class="admonition-title">RFC</p>
+<p>Els <strong><em>Request for Comments</em></strong>, més coneguts per les seves sigles RFC, són una sèrie de publicacions del grup de treball d'enginyeria d'internet que descriuen diversos aspectes del funcionament d'Internet i altres xarxes de computadores, com protocols, procediments, etc. i comentaris i idees sobre estos.</p>
+</div>
+<p>Des del punt de vista de les comunicacions, està suportat en els serveis de connexió TCP/IP i funciona de la mateixa manera que la resta de serveis propis dels entorns UNIX.</p>
+<p>Tècnicament, un procés servidor escolta en un port de comunicacions TCP (per defecte, el 80) i espera les sol·licituds de connexió dels clients web. Una vegada establerta la connexió, el protocol TCP s'encarrega de mantenir la comunicació i garantir un intercanvi de dades lliure d'errors.</p>
+<p>El protocol de transferència d'hipertext es basa en <strong>operacions senzilles de sol·licitud/resposta</strong>. Quan un client estableix una connexió amb un servidor i envia un missatge amb les dades de la sol·licitud, el servidor respon amb un missatge similar, que conté l'<strong>estat de l'operació</strong> i el seu resultat possible. Totes les operacions poden adjuntar un objecte o recurs sobre el qual actuen; cada objecte web (document HTML, arxiu multimèdia o aplicació CGI) és conegut pel seu localitzador uniforme de recursos (<em>URL, uniform resource locator</em>). Els recursos poden ser arxius, el resultat de l'execució d'un programa, una consulta a una base de dades, la traducció automàtica d’un document, etc</p>
+<p><strong>HTTP és un protocol sense estat</strong>, és a dir, no guarda cap informació sobre connexions anteriors. El desenvolupament d'aplicacions web freqüentment necessita mantenir estat. Per això s'utilitzen les galetes (<em>cookies</em>), és a dir, la informació que un servidor pot emmagatzemar en el sistema client. Això permet que les aplicacions web institueixin la noció de “sessió”, i, alhora, permet rastrejar usuaris, ja que les galetes es poden emmagatzemar en el client durant un temps indeterminat.</p>
+<div class="admonition info">
+<p class="admonition-title">Localitzador uniforme de recursos (URL)</p>
+<p>Generalment, la via de què disposa un usuari per accedir a una pàgina web o un objecte (arxiu) és mitjançant el seu localitzador uniforme de recursos (URL), que és una mena d’adreça que indica la localització exacta d’un document a Internet.</p>
+<p>L’adreça que indica la localització exacta del document es compon del nom o l’adreça d’Internet (IP, Internet protocol) del servidor i el camí relatiu del document dins del servidor. També pot incloure altres aspectes com el port pel qual se sol·licita el servei (per defecte, s’assumeix que el 80 és per al protocol HTTP, el 21 per al protocol FTP, etc.) i un nom d’usuari i una contrasenya per a aquells documents que requereixin autenticació per accedir-hi.</p>
+</div>
+<h2 id="etapes-duna-transaccio-http">Etapes d'una transacció HTTP</h2>
+<p>Amb la intenció de conèixer amb més profunditat el protocol HTTP podem avaluar en què consisteix una transacció HTTP.</p>
+<p>Cada vegada que un client fa una petició a un servidor, s’executen un seguit d'accions:</p>
+<ol>
+<li>Un usuari accedeix a una adreça d’Internet (URL) seleccionant un enllaç d’un document HTML o introduint-la directament a la barra de navegació d’un navegador web des de la perspectiva del client web. El client web descodifica l’adreça d’Internet (URL) separant-ne les diferents parts. És així com s'identifiquen el <strong>protocol d'accés</strong>, el node expressat amb el <strong>nom de domini o la seua adreça IP</strong>, el possible port opcional (el valor per defecte és el 80) i l'objecte del servidor requerit.</li>
+<li>S’obre una connexió TCP/IP amb el servidor cridant el port TCP corresponent. Es fa la petició. En conseqüència, s’envien l’ordre necessària (GET, POST, HEAD, etc.), l’adreça de l’objecte requerit (el contingut de l’adreça d’Internet del servidor), la versió del protocol HTTP utilitzada (en la major part de les ocasions és HTTP/1.0) i un conjunt variable d’informació que inclou dades sobre les capacitats del navegador web, dades opcionals per al servidor, etc.</li>
+<li>El servidor localitza el recurs sol·licitat i torna la resposta al client.</li>
+<li>Aquesta resposta consisteix en un codi d’estat i el tipus de dada amb extensions multipropòsit de correu d’Internet (<em>MIME, Multipurpose Internet Mail Extension</em>) de la informació de tornada, seguit de la mateixa informació.</li>
+<li>El client formata i mostra el recurs rebut.</li>
+<li>Es tanca la connexió TCP.</li>
+</ol>
+<p>Aquest procés es repeteix en cada accés que es faça al servidor HTTP. Per exemple, si es recull un document HTML que conté quatre imatges, el procés de transició mostrat amb anterioritat es repeteix cinc vegades, és a dir, una pel document HTML i quatre per les imatges.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Usuari
+    participant Client
+    participant Servidor
+
+    Usuari-&gt;&gt;Client: Introducció de l'URL
+    Client-&gt;&gt;Servidor: Connexió TCP i petició HTTP
+    Servidor-&gt;&gt;Servidor: Localització del recurs
+    Servidor--&gt;&gt;Client: Resposta amb codi d'estat i contingut
+    Client-&gt;&gt;Usuari: Mostra el recurs
+    Client-&gt;&gt;Servidor: Tanca la connexió TCP</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Extensió MIME</p>
+<p>El protocol HTML fou dissenyat per transportar per la xarxa arxius en format ASCII. Amb el progrés de les tecnologies i la inclusió de diferents tipus d’arxius en un format diferent a l’ASCII (imatges, vídeos, sons, etc.) en les aplicacions per Internet, va sorgir la necessitat de transformar aquests format a ASCII per la seva correcta recepció en el navegador web.</p>
+<p>El 1992, es van crear els tipus MIME, que eren especificacions per donar format a missatges en un format diferent a l’ASCII perquè poguessin ser enviats i interpretats per Internet. Més endavant es van aplicar també als documents web.</p>
+<p><strong>Nomenclatura de tipus</strong></p>
+<p>MIME assigna un nom a cada tipus de dades. Els noms segueixen el següent format:</p>
+<p><code>tipus / subtipus (tipus com a subtipus són cadenes de caràcters)</code></p>
+<p>El <code>tipus</code> defineix la categoria general de les dades i el <code>subtipus</code> defineix un tipus més específic d'aquestes dades. El tipus ha de tenir els següents valors:</p>
+<ul>
+<li><strong>text</strong>: Indica que el contingut és text pla. Exemples de subtipus: html, xml</li>
+<li><strong>multipart</strong>: Indica que té múltiples parts de dades independents. Exemples de subtipus: form-data, enviat a diari</li>
+<li><strong>message</strong>: Per encapsular un missatge existent. Per exemple quan volem respondre a un missatge de correu incorporant el missatge origen. Exemples de subtipus: partial, RFC822</li>
+<li><strong>image</strong>: Indica que és una imatge. Ex de subtipus: png, gif</li>
+<li><strong>audio</strong>: Indica que és un àudio. Exemples de subtipus: mpeg, avi</li>
+<li><strong>video</strong>: Indica que és un vídeo. Exemples de subtipus: mp4, 32kadpcm</li>
+<li><strong>application</strong>: Indica que es tracta de dades d'aplicació dels quals poden ser binaris. Exemples de subtipus: json, pdf</li>
+</ul>
+</div>
+<h2 id="lestandard-http10">L'estandard HTTP/1.0</h2>
+<p>L’estàndard HTTP/1.0 recull, únicament, tres ordres que representen les operacions de recepció, enviament de la informació i revisió de l’estat.</p>
+<ul>
+<li><strong>Mètode de petició GET</strong>. S’utilitza per sol·licitar un recurs del servidor. Sempre que premem sobre un enllaç o escrivim una adreça d’Internet a la barra de navegació d’un navegador web, estem utilitzant aquest mètode de petició. Com a resultat, el servidor HTTP envia el document corresponent a l’adreça d’Internet seleccionada.</li>
+<li><strong>Mètode de petició HEAD</strong>. Sol·licita informació sobre un recurs com, per exemple, la seva grandària, el tipus, la data de modificació, etc. Acostuma a ser utilitzat pels gestors de memòries cau de pàgines o pels servidors intermediaris (proxy server) per conèixer quan cal actualitzar la còpia que es manté d’un arxiu determinat.</li>
+<li><strong>Mètode de petició POST</strong>. S’utilitza per enviar informació al servidor, com per exemple, les dades contingudes en un formulari. El servidor passarà aquesta informació a un procés encarregat del seu tractament (acostuma a ser una aplicació del servidor). L’operació que es durà a terme amb la informació proporcionada dependrà de l’adreça d’Internet (URL) utilitzada, principalment, en els formularis.</li>
+</ul>
+<p>Val a dir que un client web selecciona automàticament les ordres HTTP necessàries per recollir la informació per a l’usuari. Per tant, davant l’activació d’un enllaç, sempre s’executa una operació GET amb la finalitat de recollir el document corresponent.</p>
+<p>Tal com mostra la imatge següent, la comunicació entre el navegador i el servidor es duu a terme en dues etapes. D’una banda, el navegador fa una sol·licitud HTTP que, posteriorment, és processada pel servidor que, en conseqüència, envia una resposta HTTP.</p>
+<p><center><img alt="Comunicació navegador - servidor" src="../img/ud5/esquemaHTTP.png" /></center>
+<center>IOC. Comunicació navegador - servidor (CC BY-SA)</center></p>
+<p>Si avaluarem amb deteniment la sol·licitud HTTP ens trobaríem amb un conjunt de línies de text que el navegador envia al servidor. D’una banda, trobaríem una <strong>línia de sol·licitud</strong>, és a dir, una línia que especifica el tipus de document sol·licitat, el <strong>mètode</strong> que s’aplicarà i la <strong>versió del protocol</strong> utilitzat. Aquesta línia estarà integrada per tres elements separats per un espai, és a dir, el mètode, l’adreça web i el protocol HTTP utilitzat pel client.</p>
+<p>A continuació, trobaríem els camps de l’encapçalament de sol·licitud, és a dir, un conjunt de línies opcionals que permeten aportar informació addicional sobre la sol·licitud i/o el client (navegador, sistema operatiu, etc.). Cadascuna d’aquestes línies estarà formada per un nom que descriu el tipus d’encapçalament, seguit per dos punts (:) i pel valor de l’encapçalament.</p>
+<p>Finalment, el cos de la sol·licitud és un conjunt de línies opcionals separades de les línies anteriors amb una línia en blanc. La seva finalitat és permetre que s’enviïn dades al servidor utilitzant un formulari durant la transmissió.</p>
+<p>En conseqüència, la sol·licitud HTTP rebria una resposta HTTP, és a dir, un conjunt de línies que el servidor enviarà al navegador web. Com en el cas de la sol·licitud, la resposta HTTP conté alguns elements definitoris com, per exemple, una línia d’estat. Aquesta línia especifica la versió del protocol utilitzada i l’estat de la sol·licitud en procés mitjançant un text explicatiu i un codi.</p>
+<p>En el cas dels camps de l'encapçalament de resposta, aquest és un conjunt de línies opcionals que permeten aportar informació addicional sobre la resposta i/o el servidor. Cadascuna d'aquestes línies es compon d'un nom que defineix el tipus d'encapçalament, seguit per dos punts (:) i pel valor de l'encapçalament.</p>
+<p>Pel que fa als <strong>codis de resposta</strong>, aquests són els codis que es veuen quan el navegador no pot mostrar la pàgina web sol·licitada. La sintaxi d'una resposta HTTP és una línia d'estat i té una estructura fixa on s'indica la versió, el codi de l'error i un text explicatiu.</p>
+<p>Els possibles codis d'estat s'identifiquen amb números de tres xifres i es classifiquen en cinc grups segons si són informatius (1xx), d'èxit en la sol·licitud (2xx), per tornar a adreçar la sol·licitud (3xx), per un error generat en el client (4xx) o bé per errors generats en el servidor (5xx).</p>
+<p>Les respostes més típiques són els codis 200 per indicar la confirmació de la petició i el 404 per indicar que l'objecte sol·licitat no es troba disponible.</p>
+<div class="admonition info">
+<p class="admonition-title">Codis d'estat més habituals</p>
+<p><table border="1" style="border-collapse: collapse; width: 100%;">
+<thead>
+    <tr>
+    <th>Codi</th>
+    <th>Categoria</th>
+    <th>Descripció</th>
+    </tr>
+</thead>
+<tbody>
+    <!-- Successful 2xx -->
+    <tr>
+    <td>200 OK</td>
+    <td>Successful (2xx)</td>
+    <td>La petició s'ha completat amb èxit. Depenent del mètode: GET (recurs enviat), HEAD (només capçalera), POST (resultat de l'acció).</td>
+    </tr>
+    <!-- Redirection 3xx -->
+    <tr>
+    <td>301 Moved Permanently</td>
+    <td>Redirection (3xx)</td>
+    <td>El recurs sol·licitat ha estat mogut permanentment a una altra URL.</td>
+    </tr>
+    <tr>
+    <td>302 Moved Temporarily</td>
+    <td>Redirection (3xx)</td>
+    <td>El recurs s'ha mogut temporalment. El client ha d'utilitzar l'URL proporcionada de forma temporal.</td>
+    </tr>
+    <tr>
+    <td>304 Not Modified</td>
+    <td>Redirection (3xx)</td>
+    <td>El recurs no ha canviat des de la darrera petició i es pot utilitzar la memòria cau.</td>
+    </tr>
+    <!-- Client Error 4xx -->
+    <tr>
+    <td>400 Bad Request</td>
+    <td>Client Error (4xx)</td>
+    <td>La petició és invàlida (p. ex., error de sintaxi).</td>
+    </tr>
+    <tr>
+    <td>401 Unauthorized</td>
+    <td>Client Error (4xx)</td>
+    <td>La petició requereix autenticació. L'usuari no està autoritzat.</td>
+    </tr>
+    <tr>
+    <td>403 Forbidden</td>
+    <td>Client Error (4xx)</td>
+    <td>El servidor entén la petició però es nega a complir-la (manca de permisos).</td>
+    </tr>
+    <tr>
+    <td>404 Not Found</td>
+    <td>Client Error (4xx)</td>
+    <td>El recurs sol·licitat no existeix.</td>
+    </tr>
+    <!-- Server Error 5xx -->
+    <tr>
+    <td>500 Internal Server Error</td>
+    <td>Server Error (5xx)</td>
+    <td>Error genèric del servidor. Es va produir una condició inesperada.</td>
+    </tr>
+    <tr>
+    <td>502 Bad Gateway</td>
+    <td>Server Error (5xx)</td>
+    <td>El servidor actua com a passarel·la o proxy i ha rebut una resposta no vàlida d'un altre servidor.</td>
+    </tr>
+    <tr>
+    <td>503 Service Unavailable</td>
+    <td>Server Error (5xx)</td>
+    <td>El servidor no pot processar la petició temporalment (manteniment o saturació).</td>
+    </tr>
+</tbody>
+</table></p>
+</div>
+<h2 id="installacio-i-configuracio-dapache2">Instal·lació i configuració d'Apache2</h2>
+<p><a class="md-button" href="https://ubuntu.com/tutorials/install-and-configure-apache#1-overview"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg></span> Informació oficial Ubuntu</a>
+<a class="md-button" href="https://httpd.apache.org/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.805 2.197v.066h.156v.44h.072v-.44h.156v-.066zm.9 0-.175.353-.172-.353h-.087v.506h.067V2.3l.172.35h.045l.172-.35v.404h.066v-.506zm-4.257 1c-.204.31-.424.66-.66 1.06l-.04.062a44.457 44.457 0 0 0-1.265 2.29c-.187.36-.38.742-.577 1.146l2.267-.25c.66-.302.955-.578 1.242-.976a15.5 15.5 0 0 0 .23-.342c.23-.363.46-.763.663-1.16.197-.386.37-.767.505-1.11.083-.22.15-.422.198-.6.042-.158.074-.307.1-.45-.884.15-1.965.295-2.668.33zM11.894 7.78l-.077.16c-.078.16-.157.32-.236.488-.086.18-.172.364-.26.552l-.132.287a75.265 75.265 0 0 0-1.427 3.3c-.163.397-.327.807-.493 1.23-.15.38-.297.765-.45 1.164l-.02.06c-.15.396-.3.802-.453 1.22l-.01.027.72-.08a.213.213 0 0 1-.042-.006c.863-.106 2.01-.75 2.75-1.547.342-.367.652-.8.94-1.306.213-.377.413-.795.604-1.258.168-.405.328-.843.48-1.318-.196.105-.423.18-.673.235a2.184 2.184 0 0 1-.273.046c.806-.31 1.314-.905 1.683-1.64a2.816 2.816 0 0 1-.968.428c-.06.012-.116.022-.174.03l-.043.006h.002c.278-.118.514-.248.718-.403a2.571 2.571 0 0 0 .637-.698l.063-.104.077-.154a8.107 8.107 0 0 0 .367-.85l.03-.088a3.04 3.04 0 0 0 .123-.463.733.733 0 0 1-.094.065c-.243.145-.66.277-.996.34l.663-.074-.664.073h-.017l-.1.017c.006-.003.01-.006.017-.008l-2.265.25-.013.022zM8.27 16.45c-.117.323-.236.654-.355.992l-.005.015c-.016.046-.032.094-.05.142-.08.227-.15.432-.31.9.264.12.475.435.675.793a1.44 1.44 0 0 0-.466-.99c1.293.06 2.41-.27 2.99-1.217.05-.084.096-.173.14-.268-.26.333-.59.474-1.2.44 0 0-.004 0-.005.002l.004-.002c.9-.404 1.354-.79 1.754-1.433.094-.153.186-.32.28-.503-.788.81-1.702 1.04-2.664.865l-.72.078a6.43 6.43 0 0 0-.067.183zM15.42.112c-.376.222-1 .85-1.748 1.763l.686 1.294c.48-.687.97-1.307 1.462-1.836l.058-.062c-.02.02-.04.04-.057.062-.16.176-.644.74-1.375 1.863.703-.035 1.784-.18 2.666-.33.262-1.47-.258-2.142-.258-2.142s-.66-1.07-1.436-.61zm-3.084 6.402a40.253 40.253 0 0 1 1.306-2.26l.04-.064c.224-.352.45-.693.677-1.02l-.685-1.293-.157.192c-.197.245-.403.51-.613.79a39.853 39.853 0 0 0-2.016 2.97l-.022.038.893 1.763c.19-.378.38-.752.575-1.118zm-3.73 8.32c.158-.406.319-.81.483-1.225.156-.394.32-.79.484-1.19a91.133 91.133 0 0 1 1.6-3.604l.205-.424c.12-.243.237-.485.36-.724a.125.125 0 0 1 .02-.04l-.895-1.763-.044.07a44.1 44.1 0 0 0-.617 1.042 38.056 38.056 0 0 0-1.092 2.04l-.094.193a24.573 24.573 0 0 0-1.258 3.087 18.492 18.492 0 0 0-.52 1.997l.896 1.77c.117-.317.24-.638.364-.963zm-1.376-.476a13.38 13.38 0 0 0-.234 1.692c0 .02-.004.04-.005.06-.28-.45-1.03-.888-1.026-.884.537.778.944 1.55 1.005 2.31-.29.058-.684-.027-1.14-.195.475.436.83.556.97.588-.434.03-.89.328-1.346.67.668-.27 1.21-.38 1.596-.29-.61 1.74-1.23 3.655-1.843 5.69a.538.538 0 0 0 .364-.354c.11-.368.84-2.786 1.978-5.965l.097-.27.028-.078c.12-.332.246-.672.374-1.02l.09-.237v-.004L7.24 14.3c-.003.02-.01.04-.012.06z"/></svg></span> Informació oficial Apache</a></p>
+<h3 id="directives-importants">Directives importants</h3>
+<h4 id="directiva-directory">Directiva <code>&lt;Directory&gt;</code></h4>
+<p>La directiva Directory permet configurar permisos en els diferents directoris del nostre espai web. Es tracta d'una directriu que es fa servir per definir característiques que només s'aplicaran al directori especificat i no a tot el servidor (per això s'ha de tancar).</p>
+<p>Aquests permisos serien els següents:</p>
+<ul>
+<li><strong>Options</strong><ul>
+<li><strong>Indexes</strong>. Si dins de la carpeta no hi ha cap arxiu igual que el que hem definit al paràmetre DirectoryIndex al navegador es mostrarà un índex amb tots els arxius de la carpeta actual.</li>
+<li><strong>FollowSymLinks</strong>. El servidor seguirà els enllaços simbòlics (lògics), és a dir, els àlies.</li>
+</ul>
+</li>
+<li><strong>Require</strong> all denied, Require not ip 192.168.1.50. Denega la petició a una carpeta, un arxiu o una adreça d’Internet.</li>
+<li><strong>Require</strong> all granted, Require ip 192.168.1.50. Permet la petició a una carpeta, un arxiu o una adreça d’Internet.</li>
+</ul>
+<h4 id="directiva-files">Directiva <code>&lt;Files&gt;</code></h4>
+<p>La directiva Files permet configurar permisos en els diferents arxius del nostre espai web. Val a dir que el paràmetre Files ha d'estar inclòs dintre del paràmetre Directory.</p>
+<p>Aquests permisos serien els següents:</p>
+<ul>
+<li>require all denied, require not ip  192.168.1.50. Denega la petició a un arxiu o una adreça d’Internet.</li>
+<li>require all granted, require ip 192.168.1.50. Permet la petició a un arxiu o una adreça de Internet.</li>
+<li>A tall d'exemple, podríem trobar el següent:<ul>
+<li>Volem prohibir l'accés a arxius amb format JPG dintre de la carpeta <code>/var/www/serveisenxarxa/public_html</code></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;directory &quot;/var/www/serveisenxarxa/public_html&quot;&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  &lt;files *.jpg&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>     require all denied
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  &lt;/files&gt;
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  require all granted
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>&lt;/directory&gt;
+</code></pre></div></td></tr></table></div>
+<h4 id="directiva-virtualhost">Directiva <code>&lt;VirtualHost&gt;</code></h4>
+<p>La directiva virtualhost permet configurar més d’un lloc web en un mateix servidor, és a dir, una mateixa adreça d’Internet per a diferents noms de domini. Val a dir que, si volem utilitzar aquest paràmetre, cal haver configurat el servidor de noms de domini (DNS) perquè adreci els noms de domini cap al nostre servidor web Apache.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Torna a l'inici
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
+        
+          
+          <a href="../SMX2-SXA-4/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: UD4. El servei DNS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                UD4. El servei DNS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../manuals/CanviMirror/" class="md-footer__link md-footer__link--next" aria-label="Següent: Canvi de Mirror en Ubuntu">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Següent
+              </span>
+              <div class="md-ellipsis">
+                Canvi de Mirror en Ubuntu
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Apunts SXA - 2SMX by P.Galera & J.Beteta es troba sota llicència CC BY-NC-SA 4.0 - <a href="#__consent">Canvia la configuració de les cookies</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:fj.galerataberner@edu.gva.es" target="_blank" rel="noopener" title="Contacte" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>Consentiment de Cookies</h4>
+<p>Utilitzem cookies per reconèixer les vostres visites i preferències repetides, així com per mesurar l'eficàcia de la nostra documentació i si els usuaris troben el que estan cercant. Amb el vostre consentiment, ens esteu ajudant a millorar la nostra documentació.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accepta</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gestiona la configuració</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "toc.follow", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>
