@@ -1196,17 +1196,17 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ApacheConf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;directory &quot;/var/www/serveisenxarxa/public_html&quot;&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  &lt;files *.jpg&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>     require all denied
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  &lt;/files&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>  require all granted
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>&lt;/directory&gt;
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">&lt;directory</span><span class="w"> </span><span class="s">&quot;/var/www/serveisenxarxa/public_html&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">&lt;files</span><span class="w"> </span><span class="s">*.jpg</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">     </span><span class="nb">require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>denied
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nt">&lt;/files&gt;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="nb">require</span><span class="w"> </span><span class="k">all</span><span class="w"> </span>granted
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nt">&lt;/directory&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="directiva-virtualhost">Directiva <code>&lt;VirtualHost&gt;</code></h4>
 <p>La directiva virtualhost permet configurar més d’un lloc web en un mateix servidor, és a dir, una mateixa adreça d’Internet per a diferents noms de domini. Val a dir que, si volem utilitzar aquest paràmetre, cal haver configurat el servidor de noms de domini (DNS) perquè adreci els noms de domini cap al nostre servidor web Apache.</p>
@@ -1225,7 +1225,7 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/apache2/sites-available/000-default.conf<span class="w"> </span>/etc/apache2/sites-available/elmeullocweb.conf
 </code></pre></div></td></tr></table></div>
 <p>La configuració bàsica és la següent:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ApacheConf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -1255,37 +1255,37 @@
 <span class="normal"><a href="#__codelineno-2-28">28</a></span>
 <span class="normal"><a href="#__codelineno-2-29">29</a></span>
 <span class="normal"><a href="#__codelineno-2-30">30</a></span>
-<span class="normal"><a href="#__codelineno-2-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&lt;VirtualHost<span class="w"> </span>*:80&gt;
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="c1"># The ServerName directive sets the request scheme, hostname and port that</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="c1"># the server uses to identify itself. This is used when creating</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="c1"># redirection URLs. In the context of virtual hosts, the ServerName</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="c1"># specifies what hostname must appear in the request&#39;s Host: header to</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="c1"># match this virtual host. For the default virtual host (this file) this</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="c1"># value is not decisive as it is used as a last resort host regardless.</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="c1"># However, you must set it for any further virtual host explicitly.</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="c1">#ServerName www.example.com</span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="c"># The ServerName directive sets the request scheme, hostname and port that</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="c"># the server uses to identify itself. This is used when creating</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="c"># redirection URLs. In the context of virtual hosts, the ServerName</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="c"># specifies what hostname must appear in the request&#39;s Host: header to</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="c"># match this virtual host. For the default virtual host (this file) this</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="c"># value is not decisive as it is used as a last resort host regardless.</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="c"># However, you must set it for any further virtual host explicitly.</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="c">#ServerName www.example.com</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span>ServerAdmin<span class="w"> </span>webmaster@localhost
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span>DocumentRoot<span class="w"> </span>/var/www/html
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nb">ServerAdmin</span><span class="w"> </span>webmaster@localhost
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/var/www/html</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="c1"># Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="c1"># error, crit, alert, emerg.</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="c1"># It is also possible to configure the loglevel for particular</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="c1"># modules, e.g.</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="c1">#LogLevel info ssl:warn</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="c"># Available loglevels: trace8, ..., trace1, debug, info, notice, warn,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="c"># error, crit, alert, emerg.</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="c"># It is also possible to configure the loglevel for particular</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="c"># modules, e.g.</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="c">#LogLevel info ssl:warn</span>
 <a id="__codelineno-2-19" name="__codelineno-2-19"></a>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span>ErrorLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/error.log
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">    </span>CustomLog<span class="w"> </span><span class="si">${</span><span class="nv">APACHE_LOG_DIR</span><span class="si">}</span>/access.log<span class="w"> </span>combined
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/error.log
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/access.log<span class="w"> </span>combined
 <a id="__codelineno-2-22" name="__codelineno-2-22"></a>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">    </span><span class="c1"># For most configuration files from conf-available/, which are</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="c1"># enabled or disabled at a global level, it is possible to</span>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">    </span><span class="c1"># include a line for only one particular virtual host. For example the</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="c1"># following line enables the CGI configuration for this host only</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="c1"># after it has been globally disabled with &quot;a2disconf&quot;.</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">    </span><span class="c1">#Include conf-available/serve-cgi-bin.conf</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a>&lt;/VirtualHost&gt;
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">    </span><span class="c"># For most configuration files from conf-available/, which are</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">    </span><span class="c"># enabled or disabled at a global level, it is possible to</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">    </span><span class="c"># include a line for only one particular virtual host. For example the</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">    </span><span class="c"># following line enables the CGI configuration for this host only</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">    </span><span class="c"># after it has been globally disabled with &quot;a2disconf&quot;.</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">    </span><span class="c">#Include conf-available/serve-cgi-bin.conf</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="nt">&lt;/VirtualHost&gt;</span>
 <a id="__codelineno-2-30" name="__codelineno-2-30"></a>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="c1"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="c"># vim: syntax=apache ts=4 sw=4 sts=4 sr noet</span>
 </code></pre></div></td></tr></table></div>
 <p>Una vegada realitzats els canvis activarem en lloc web amb el comandament <code>a2ensite</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>a2ensite<span class="w"> </span>elmeullocweb
@@ -1299,21 +1299,21 @@
 <h5 id="llocs-virtuals-basats-en-ladreca-dinternet-ip">LLocs virtuals basats en l'adreça d'internet (IP)</h5>
 <p>En aquest cas, podrem allotjar múltiples dominis en una única màquina que disposarà de diferents adreces d’Internet (IP) i, en cadascuna d’elles, s’hi executarà un lloc virtual.</p>
 <p>Haurem de canviar la directiva <code>&lt;VirtualHost *:80&gt;</code> de forma que s'especifique a quina adreça IP ha de respondre. Per exemple <code>&lt;VirtualHost 192.168.2.112:80&gt;</code> si ha de respondre a l'adreça IP 192.168.2.112.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ApacheConf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>&lt;VirtualHost<span class="w"> </span><span class="m">192</span>.168.2.112:80&gt;
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>DocumentRoot<span class="w"> </span><span class="s2">&quot;/var/www/serveisenxarxa/public_html&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>&lt;/VirtualHost&gt;
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">192.168.2.112:80</span><span class="nt">&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">&quot;/var/www/serveisenxarxa/public_html&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nt">&lt;/VirtualHost&gt;</span>
 </code></pre></div></td></tr></table></div>
 <h5 id="llocs-virtuals-basats-en-el-nom-de-domini">LLocs virtuals basats en el nom de domini</h5>
 <p>El problema dels llocs web virtuals basats en adreces d’Internet (IP) és que, considerant que s'allotgen molts dominis, necessitarem una adreça d’Internet (IP) per a cadascun dels dominis. Per tant, pot ser preferible treballar amb llocs virtuals basats en noms. En aquest cas, després de copiar l'arxiu de configuració per defecte, haurem d'afegir la directriu <code>ServerName</code> donat que, si bé els llocs virtuals es troben en la mateixa IP, s'ha de canviar el nom per a cadascun dels llocs. En el cas de treballar amb servidor DNS, aquest haurà d'estar configurat per resoldre aquests llocs en les zones corresponents. I la directiva DocumentRoot per a indicar des de quin directori es serviran les pàgines. Aquesta seria la configuració per a lloc www.serveisenxarxa.org:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ApacheConf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&lt;VirtualHost<span class="w"> </span>*:80&gt;
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>ServerName<span class="w"> </span>www.serveisenxarxa.org
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>DocumentRoot<span class="w"> </span><span class="s2">&quot;/var/www/serveisenxarxa/public_html&quot;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>&lt;/VirtualHost&gt;
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>www.serveisenxarxa.org
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="s2">&quot;/var/www/serveisenxarxa/public_html&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="nt">&lt;/VirtualHost&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>Finalment, per verificar que tots els canvis aplicats han tingut èxit, tornarem a arrencar el servidor web.</p>
 <h2 id="installacio-i-configuracio-basica-dnginx">Instal·lació i configuració bàsica d'nginx</h2>
