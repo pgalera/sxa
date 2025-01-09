@@ -2,58 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pgalera.github.io/sxa/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-1/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-2/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-3/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-4/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/SMX2-SXA-5/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/manuals/CanviMirror/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/manuals/ManSolMachine_id/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/manuals/ManUbuntuServerDocker/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/practiques/Prac1NAT/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/practiques/Prac2Telnet/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/practiques/Prac3SSH/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
+    </url>
+    <url>
+         <loc>https://pgalera.github.io/sxa/practiques/Prac5Autenticacio/</loc>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/practiques/Prac5VHostApache/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
     <url>
          <loc>https://pgalera.github.io/sxa/practiques/Prac5VHostNginx/</loc>
-         <lastmod>2024-12-20</lastmod>
+         <lastmod>2025-01-09</lastmod>
     </url>
 </urlset>
