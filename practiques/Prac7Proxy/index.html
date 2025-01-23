@@ -940,16 +940,19 @@
 <p>Ens assegurem que Squid arrancarà amb la màquina:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>squid
 </code></pre></div></td></tr></table></div>
+<p>En qualsevol moment, podem accedir als <em>logs</em> per veure com està funcionant el Proxy:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/squid/access.log
+</code></pre></div></td></tr></table></div>
 <h2 id="configuracio-basica-de-squid">Configuració bàsica de Squid</h2>
 <h3 id="editar-el-fitxer-de-configuracio">Editar el fitxer de configuració</h3>
 <p>El fitxer de configuració de Squid es troba en <code>/etc/squid/squid.conf</code>. Abans de modificar-lo es recomana fer un copia d'aquest. Per altra banda, en ambients Ubuntu, aquest fitxer <em>beu</em> dels fitxers de configuració que estan en <code>/etc/squid/conf.d/</code>, per tant, crearem ací un fitxer amb la nostra configuració:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/conf.d/miconfig.conf
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/conf.d/miconfig.conf
 </code></pre></div></td></tr></table></div>
 <p>i ací anirem afegint les nostres regles...</p>
 <h3 id="permetre-acces-des-de-la-xarxa-local">Permetre accés des de la xarxa local</h3>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>acl localnet src 192.168.1.0/24
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>http_access allow localnet
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>acl localnet src 192.168.1.0/24
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>http_access allow localnet
 </code></pre></div></td></tr></table></div>
 Amb la primera linia definim la regla, i amb la segon la apliquem.</p>
 <h2 id="configuracio-dels-clients">Configuració dels clients</h2>
@@ -959,36 +962,36 @@ Amb la primera linia definim la regla, i amb la segon la apliquem.</p>
 <h2 id="configuracio-avancada">Configuració avançada</h2>
 <h3 id="bloquejar-llocs-webs-especifics">Bloquejar llocs webs específics</h3>
 <p>Primer crearem un fitxer on guardarem els llocs que volem bloquejar:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/bloqueig.txt
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/squid/bloqueig.txt
 </code></pre></div></td></tr></table></div>
 <p>afigirem en este el llocs s abloquejar, per exemple:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bloqueig.txt</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>marca.com
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>youtube.com
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bloqueig.txt</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>marca.com
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>youtube.com
 </code></pre></div></td></tr></table></div>
 <p>finalment afegim les regles següents al fitxer de configuració:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>acl blocked_sites dstdomain &quot;/etc/squid/bloqueig.txt&quot;
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>http_access deny blocked_sites
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>acl blocked_sites dstdomain &quot;/etc/squid/bloqueig.txt&quot;
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>http_access deny blocked_sites
 </code></pre></div></td></tr></table></div>
 <p>i com sempre que afegim i configurem regles noves, reiniciem:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>systemctl<span class="w"> </span>restart
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>systemctl<span class="w"> </span>restart
 </code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Important mantindre l'ordre!</p>
 <p>L'ordre de les regles <code>http_access</code> és important. <strong>Squid</strong> les revisa de dalt a baix i aplica la primera conincidència. Si la línia <code>http_access deny all</code> està abans de <code>http_access allow localnet</code>, ningú podrà accedir...</p>
 <p>Assegura't que el fitxer tinga un ordre semblant a aquest:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>acl localnet src 192.168.1.0/24
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>acl blocked_sites dstdomain &quot;/etc/squid/bloqueig.txt&quot;
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>http_access deny blocked_sites
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>http_access allow localnet
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>http_access deny all
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">miconfig.conf</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>acl localnet src 192.168.1.0/24
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>acl blocked_sites dstdomain &quot;/etc/squid/bloqueig.txt&quot;
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>http_access deny blocked_sites
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>http_access allow localnet
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>http_access deny all
 </code></pre></div></td></tr></table></div>
 <ul>
 <li><code>http_access deny blocked_sites</code> bloqueja els dominis especificats abans que es permeta l'accés general a la xarxa local <code>localnet</code>.</li>
