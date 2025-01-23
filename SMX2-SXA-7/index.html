@@ -477,11 +477,59 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installacio-i-configuracio" class="md-nav__link">
+  <a href="#installacio-i-configuracio-squid" class="md-nav__link">
     <span class="md-ellipsis">
-      Instal·lació i configuració
+      Instal·lació i configuració SQUID
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació i configuració SQUID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guia-servidor-squid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guia servidor squid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guia servidor squid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directoris-del-servei" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directoris del servei
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametres-habituals-al-fitxer-de-configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paràmetres habituals al fitxer de configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -759,6 +807,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practiques/Prac7Proxy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Servei Proxy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -859,11 +928,59 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installacio-i-configuracio" class="md-nav__link">
+  <a href="#installacio-i-configuracio-squid" class="md-nav__link">
     <span class="md-ellipsis">
-      Instal·lació i configuració
+      Instal·lació i configuració SQUID
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Instal·lació i configuració SQUID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guia-servidor-squid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guia servidor squid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guia servidor squid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directoris-del-servei" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directoris del servei
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametres-habituals-al-fitxer-de-configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paràmetres habituals al fitxer de configuració
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -950,12 +1067,152 @@
 <li>Explica cadascuna de les funcions proxy. Ajuda't amb un diagrama i algun exemple.</li>
 </ul>
 </details>
-<h2 id="installacio-i-configuracio">Instal·lació i configuració</h2>
+<h2 id="installacio-i-configuracio-squid">Instal·lació i configuració SQUID</h2>
 <p>En els següents enllaços trobareu informació sobre la instal·lació i la configuració d'SQUID:</p>
 <p><center>
 <a class="md-button" href="https://documentation.ubuntu.com/server/how-to/web-services/install-a-squid-server/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg></span> Documentacio Ubuntu</a>
 <a class="md-button" href="https://www.squid-cache.org/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.909.01C9.832.153 7.89 1.617 7.89 1.617s4.235-1.383 5.42.752c.861 1.552-.133 3.989-1.67 6.6-1.418-1.212-5.21-4.035-8.73-3.038C-1.528 7.187.43 13.176.43 13.176S.45 8.632 2.803 8.14c1.71-.358 3.673 1.364 5.63 3.664-1.567 1.005-5.368 3.815-5.526 7.545C2.705 24.048 8.883 24 8.883 24s-4.224-1.424-3.955-3.863c.196-1.773 2.403-3.148 5.149-4.338.451 1.833 1.894 6.393 5.316 7.701 4.313 1.648 6.176-4.37 6.176-4.37s-2.627 3.662-4.816 2.647c-1.59-.737-2.189-3.308-2.448-6.343 1.845.127 6.536.137 8.811-2.785 2.867-3.681-2.158-7.353-2.158-7.353s2.597 3.687.976 5.5c-1.178 1.317-3.755 1.103-6.66.417.689-1.753 2.146-6.31.129-9.423C14.45.32 13.155-.074 11.909.01zm-1.266 2.487c-.547 0-1.097.072-1.557.162.78.292 1.413.754 1.862 1.361a3.578 3.578 0 0 1 .646 1.524 9.968 9.968 0 0 0 .524-1.475 1.254 1.254 0 0 0-.186-1.039 1.234 1.233 0 0 0-.93-.523 5.378 5.378 0 0 0-.359-.01zm9.713 4.283c-.032.849-.263 1.606-.691 2.228a3.492 3.491 0 0 1-1.219 1.098 10.375 10.374 0 0 0 1.115.065c.142 0 .283-.003.418-.01a1.203 1.203 0 0 0 .912-.502 1.283 1.283 0 0 0 .198-1.065c-.164-.657-.459-1.302-.733-1.814zM3.362 9.626a1.23 1.23 0 0 0-1.143.802c-.245.629-.378 1.33-.451 1.91.785-1.018 1.825-1.582 2.967-1.582a3.438 3.438 0 0 1 .494.036 9.569 9.569 0 0 0-1.211-.965 1.185 1.185 0 0 0-.656-.201zm12.953 8.546c.12.576.26 1.076.424 1.512a1.21 1.21 0 0 0 1.135.795 1.247 1.247 0 0 0 .666-.202c.559-.362 1.07-.848 1.463-1.273a4.358 4.358 0 0 1-1.211.178 3.472 3.472 0 0 1-2.477-1.01zm-8.168.428a9.79 9.79 0 0 0-1.272.877 1.24 1.24 0 0 0-.449.95 1.269 1.269 0 0 0 .451.981c.51.431 1.122.78 1.64 1.03-.465-.707-.711-1.46-.724-2.221a3.605 3.604 0 0 1 .354-1.617z"/></svg></span> Squid-cache</a>
 </center></p>
+<h3 id="guia-servidor-squid">Guia servidor squid</h3>
+<h4 id="installacio">Instal·lació</h4>
+<p>En un sistema basat en Ubuntu, farem la instal·lació de forma habitual:</p>
+<ul>
+<li><code>sudo apt install squid</code></li>
+</ul>
+<p>Per tal de comprovar l'estat del servei:</p>
+<ul>
+<li><code>sudo service squid status</code></li>
+</ul>
+<p>Per reiniciar el servei:</p>
+<ul>
+<li><code>sudo service squid restart</code></li>
+</ul>
+<h4 id="directoris-del-servei">Directoris del servei</h4>
+<p>Els directoris que haurem de "controlar" són:</p>
+<ul>
+<li><code>/etc/squid</code> --&gt; Arrel de configuració<ul>
+<li><code>/etc/squid/squid.conf</code> --&gt; fitxer de configuració del proxy</li>
+</ul>
+</li>
+<li><code>/var/log/squid</code> --&gt; Arrel dels fitxers de log</li>
+</ul>
+<h4 id="parametres-habituals-al-fitxer-de-configuracio">Paràmetres habituals al fitxer de configuració</h4>
+<ul>
+<li><strong>http_port 3128</strong>: Port d'escolta del servidor (per defecte 3128)</li>
+<li><strong>cache_mem 256 MB</strong>: Quantitat de memòria assignada per la catxé de Squid (caldrà tindre en compte la quantitat de memòria RAM disponible)</li>
+<li><strong>cache_mgr webmaster</strong>: email per enviar missatge a l'administrador quan succeís algun incident en la catxé</li>
+<li><strong>cache peer</strong>: indica servidors intermediaris amb catxé dins d'una jerarquia com a pares o bé com a germans</li>
+<li><strong>cache_replacement_policy</strong>: indica la política de reemplaç de la catxé:<ul>
+<li><strong>LRU</strong> (<em>Least Recently Used</em>): El menys utilitzat recentment. Política per defecte.</li>
+<li><strong>LFUDA</strong> (<em>Least Frequently Used with Dynamic Aging</em>): El menys utilitzat freqüentment amb envelliment dinàmic .</li>
+<li><strong>GDSF</strong> (<em>GreedyDual size Frequancy</em>): Frequüencia de grandària del cobejós dual.</li>
+</ul>
+</li>
+<li><strong>cache_swap_low 90</strong> i <strong>cache_swap_high 95</strong>: indiquen l'interval de percentatge de memòria catxé que es dedica a l'intercanvi.</li>
+<li><strong>maximum_object_size_in_memory 512KB</strong>: tamanya màxim d'un objecte en memòria.</li>
+<li><strong>cache_dir ufs /var/spool/squid 100 16 256</strong>: assigna espai en disc per guardar la catxé d'squid. Paràmetres: <strong>UFS</strong> és el format en que es guarda, directori on es guarda, <strong>100</strong> és l'espai en MB (ha de ser més que la catxé), <strong>16</strong> directoris màxim de primer nivell, <strong>256</strong> subdirectoris màxim (de segon nivell).</li>
+<li><strong>cache_log /var/log/squid/cache.log</strong>: arxiu log amb informació del comportament del servidor proxy.</li>
+</ul>
+<details class="info">
+<summary>Polítiques de reemplaç de catxé</summary>
+<ul>
+<li><strong>LRU (Least Recently Used)</strong><ul>
+<li>Com funciona?<ul>
+<li>Aquesta política elimina els objectes de la caché que han estat utilitzats menys recentment.</li>
+<li>Quan la caché està plena i cal espai per a nous objectes, es busca i elimina l'element que fa més temps que no s'utilitza.</li>
+</ul>
+</li>
+<li>Avantatges:<ul>
+<li>És senzilla de comprendre i implementar.</li>
+<li>Funciona bé en escenaris on els patrons d'accés són força aleatoris.</li>
+</ul>
+</li>
+<li>Desavantatges:<ul>
+<li>No té en compte la mida dels objectes ni la seva freqüència d'accés.</li>
+<li>Pot mantenir objectes grans que es consulten poc, mentre elimina objectes petits que s'accedeixen amb freqüència.</li>
+</ul>
+</li>
+<li>Ús a SQUID:<ul>
+<li>LRU és la política de gestió predeterminada en SQUID.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>LFUDA (Least Frequently Used with Dynamic Aging)</strong><ul>
+<li>Com funciona?<ul>
+<li>Aquesta política prioritza mantenir a la caché els objectes més petits i accedits més sovint.</li>
+<li>La "freqüència d'accés" és ajustada dinàmicament perquè objectes molt antics no es mantinguin eternament a la caché.</li>
+</ul>
+</li>
+<li>Avantatges:<ul>
+<li>Optimitza l'ús de la caché per a objectes petits i populars.</li>
+<li>És ideal per entorns amb un gran volum de dades petites i amb patrons d'ús repetitiu.</li>
+</ul>
+</li>
+<li>Desavantatges:<ul>
+<li>Pot donar menys prioritat a objectes grans, fins i tot si són importants.</li>
+<li>És més complexa de gestionar que LRU.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>GDSF (Greedy Dual-Size Frequency)</strong><ul>
+<li>Com funciona?<ul>
+<li>Prioritza l'eliminació dels objectes grans i menys accedits.</li>
+<li>Assigna un "cost" a cada objecte que es basa en:<ul>
+<li>La mida de l'objecte.</li>
+<li>La seva freqüència d'accés.</li>
+<li>El temps des de l'últim accés.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Avantatges:<ul>
+<li>Combina el millor de les altres polítiques: considera tant la mida com la freqüència d'accés.</li>
+<li>És eficaç per entorns on els objectes grans consumeixen massa espai i redueixen l'eficiència de la caché.</li>
+</ul>
+</li>
+<li>Desavantatges:<ul>
+<li>Pot ser més complexa de configurar i monitoritzar.</li>
+<li>Menys eficient si la mida dels objectes no varia gaire.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Política</th>
+<th style="text-align: center;">Prioritat per a mida</th>
+<th style="text-align: center;">Prioritat per a ús freqüent</th>
+<th style="text-align: center;">Casos recomanats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>LRU</strong></td>
+<td style="text-align: center;">✘ (no té en compte)</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">Entorns amb patrons d'accés aleatoris.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>LFUDA</strong></td>
+<td style="text-align: center;">✔ (objectes petits)</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">Objectes petits i consultats sovint.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>GDSF</strong></td>
+<td style="text-align: center;">✔ (elimina grans)</td>
+<td style="text-align: center;">✔</td>
+<td style="text-align: center;">Entorns amb variabilitat en mida i ús dels objectes.</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+</details>
 
 
 
