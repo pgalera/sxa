@@ -10,13 +10,13 @@
         <meta name="author" content="Paco Galera & Javier Beteta">
       
       
-        <link rel="canonical" href="https://pgalera.github.io/sxa/practiques/Prac5VHostNginx/">
+        <link rel="canonical" href="https://pgalera.github.io/sxa/practiques/Prac6TFTP/">
       
       
-        <link rel="prev" href="../Prac5VHostApache/">
+        <link rel="prev" href="../Prac5Autenticacio/">
       
       
-        <link rel="next" href="../Prac5Autenticacio/">
+        <link rel="next" href="../Prac7Proxy/">
       
       
       <link rel="icon" href="../../img/logojaume.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>UD5 - Pràctica 1D - Llocs Virtuals en nginx - Serveis en Xarxa</title>
+        <title>UD6 - Pràctica 1 - Servidor TFTP - Serveis en Xarxa</title>
       
     
     
@@ -69,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="UD5 - Pràctica 1D - Llocs Virtuals en nginx - Serveis en Xarxa" >
+        <meta  property="og:title"  content="UD6 - Pràctica 1 - Servidor TFTP - Serveis en Xarxa" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac5VHostNginx.png" >
+        <meta  property="og:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac6TFTP.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -81,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://pgalera.github.io/sxa/practiques/Prac5VHostNginx/" >
+        <meta  property="og:url"  content="https://pgalera.github.io/sxa/practiques/Prac6TFTP/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="UD5 - Pràctica 1D - Llocs Virtuals en nginx - Serveis en Xarxa" >
+        <meta  name="twitter:title"  content="UD6 - Pràctica 1 - Servidor TFTP - Serveis en Xarxa" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac5VHostNginx.png" >
+        <meta  name="twitter:image"  content="https://pgalera.github.io/sxa/assets/images/social/practiques/Prac6TFTP.png" >
       
     
     
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ud5-practica-1d-llocs-virtuals-en-nginx" class="md-skip">
+        <a href="#installar-i-configurar-un-servidor-de-tftp-en-ubuntu" class="md-skip">
           Salta el contingut
         </a>
       
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              UD5 - Pràctica 1D - Llocs Virtuals en nginx
+              UD6 - Pràctica 1 - Servidor TFTP
             
           </span>
         </div>
@@ -628,30 +628,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Servidor nginx
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Prac5VHostNginx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,92 +640,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Taula de continguts
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuracio-de-virtual-hosts-mitjancant-ports-distints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuració de Virtual Hosts mitjançant ports distints
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuració de Virtual Hosts mitjançant ports distints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creacio-dels-fitxers-de-configuracio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creació dels fitxers de configuració
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creacio-de-les-webs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creació de les webs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#habilitar-les-configuracions-de-virtual-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      Habilitar les configuracions de Virtual Host
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuracio-de-virtual-hosts-mitjancant-nom" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuració de Virtual Hosts mitjançant nom
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuració de Virtual Hosts mitjançant nom">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configurar-noms-de-domini-dns-simulats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configurar noms de domini (DNS simulats)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -776,10 +670,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Prac6TFTP/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Servei TFTP
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -788,6 +702,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-del-servidor-tftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació del servidor TFTP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-directori-del-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear el directori del servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provar-el-servei-tftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provar el servei TFTP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -848,68 +809,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuracio-de-virtual-hosts-mitjancant-ports-distints" class="md-nav__link">
+  <a href="#installacio-del-servidor-tftp" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuració de Virtual Hosts mitjançant ports distints
+      Instal·lació del servidor TFTP
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Configuració de Virtual Hosts mitjançant ports distints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creacio-dels-fitxers-de-configuracio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creació dels fitxers de configuració
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creacio-de-les-webs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Creació de les webs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#habilitar-les-configuracions-de-virtual-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      Habilitar les configuracions de Virtual Host
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuracio-de-virtual-hosts-mitjancant-nom" class="md-nav__link">
+  <a href="#crear-el-directori-del-servidor" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuració de Virtual Hosts mitjançant nom
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuració de Virtual Hosts mitjançant nom">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#configurar-noms-de-domini-dns-simulats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configurar noms de domini (DNS simulats)
+      Crear el directori del servidor
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#provar-el-servei-tftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provar el servei TFTP
+    </span>
+  </a>
   
 </li>
       
@@ -928,120 +850,53 @@
                   
 
 
-<h1 id="ud5-practica-1d-llocs-virtuals-en-nginx">UD5 - Pràctica 1D - Llocs Virtuals en nginx</h1>
-<div class="admonition success">
-<p class="admonition-title">Quins fitxers estan implicats en la gestió de Hosts Virtuals en nginx?</p>
-<p>Tots els fitxers de configuració que estroben a la carpeta <strong><em>sites-available</em></strong>. Posteriorment, s'hauran d'habilitar els llocs creant enllaços simbòlics (<code>ln -s</code>) des dels fitxers de <strong><em>sites-available</em></strong> a <strong><em>sites-enabled</em></strong> de les webs habilitades.
-Al contrari que en Apache, si la configuració es basa en els ports d'accés al servidor, no cladrà habilitar l'escolta d'aquests al fitxer <strong><em>ports.conf</em></strong>, perquè directament <strong>no existeix</strong>.</p>
-</div>
-<h2 id="configuracio-de-virtual-hosts-mitjancant-ports-distints">Configuració de <em>Virtual Hosts</em> mitjançant ports distints</h2>
-<p>Per als següents exemples anem a considerar la següent configuració:</p>
+<h1 id="installar-i-configurar-un-servidor-de-tftp-en-ubuntu">Instal·lar i configurar un servidor de TFTP en Ubuntu</h1>
+<p>Un servidor de TFTP s’utilitza molt en administració de sistemes per a guardar còpies de seguretat de configuracions de dispositius, ja que és molt simple de configurar i no necessita cap usuari ni contrasenya.</p>
+<h2 id="installacio-del-servidor-tftp">Instal·lació del servidor TFTP</h2>
+<p>En primer lloc, instal·larem un servidor de TFTP. En Ubuntu existeixen diversos servidors disponibles per a instal·lar des del repositori d’Ubuntu. En concret, nosaltres instal·larem el <code>tftpd-hpa</code> per a realitzar aquesta pràctica:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># apt-get install tftpd-hpa</span>
+</code></pre></div></td></tr></table></div>
+<p>A continuació, editem el fitxer de configuració:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># vim /etc/default/tftpd-hpa</span>
+</code></pre></div></td></tr></table></div>
+<p>i modifiquem les línies del fitxer perquè quedin de la següent manera:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># Exemple de configuració
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>TFTP_USERNAME=&quot;tftp&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>TFTP_DIRECTORY=&quot;/tftpprova&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>TFTP_ADDRESS=&quot;0.0.0.0:69&quot;
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>TFTP_OPTIONS=&quot;--secure -c&quot;
+</code></pre></div></td></tr></table></div>
+<p>El paràmetre <code>-c</code> permet que es pugui enviar fitxers al servidor, i el directori <code>/tftpprova</code> es pot substituir pel que vulgueu perquè sigui un poc més amigable que el directori per defecte <code>/var/lib/tftpboot</code>.</p>
+<h2 id="crear-el-directori-del-servidor">Crear el directori del servidor</h2>
+<p>A continuació, creem al servidor el directori <code>tftpprova</code> en l’arrel del sistema i li donem els permisos 775. El directori serà propietat de <code>root:tftp</code> (usuari root i grup propietari tftp).</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># mkdir /tftpprova</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># chmod 775 /tftpprova</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># chown root:tftp /tftpprova</span>
+</code></pre></div></td></tr></table></div>
+<p>Reiniciem el servei i ja podem utilitzar el nostre servidor TFTP:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># sudo service tftpd-hpa restart</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="provar-el-servei-tftp">Provar el servei TFTP</h2>
+<p>Per a provar el servei necessitarem un client de TFTP. Ja que hem instal·lat el servidor <code>tftpd-hpa</code>, utilitzarem també el mateix client.</p>
+<p>En una altra màquina client, instal·lem el programari necessari per a connectar amb el servidor:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># sudo apt-get install tftp-hpa</span>
+</code></pre></div></td></tr></table></div>
+<p>Per connectar-nos farem:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>tftp<span class="w"> </span><span class="m">192</span>.168.69.1
+</code></pre></div></td></tr></table></div>
+<p><em>(Substituïu </em><strong><em>``</em></strong><em> per la IP del servidor TFTP.)</em></p>
+<p>Es quedarà esperant la introducció de nous comandaments.</p>
+<p>Els comandaments bàsics per a funcionar són:</p>
 <ul>
-<li>Web <strong>tigres.com</strong> servida al port <strong>8081</strong></li>
-<li>Web <strong>lleons.com</strong> servida al port <strong>8082</strong></li>
+<li><code>put</code> i <code>get</code>: per a pujar i descarregar fitxers del servidor.</li>
+<li><code>quit</code>: per a sortir del mode TFTP.</li>
 </ul>
-<h3 id="creacio-dels-fitxers-de-configuracio">Creació dels fitxers de configuració</h3>
-<p>Crearem dues configuracions de Virtual Host, primer la dels <em>tigres</em>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/tigres.com
-</code></pre></div></td></tr></table></div>
-<p>En aquest fitxer escriurem, mínim:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">tigres.com</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">8081</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">tigres.com</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">/var/www/tigres</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="kn">index</span><span class="w"> </span><span class="s">index.html</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="kn">try_files</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri/</span><span class="w"> </span><span class="p">=</span><span class="mi">404</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p>A continuació, la dels <em>lleons</em>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/lleons.com
-</code></pre></div></td></tr></table></div>
-<p>En aquest fitxer escriurem, mínim:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">lleons.com</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">8082</span><span class="p">;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">lleons.com</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">/var/www/lleons</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="kn">index</span><span class="w"> </span><span class="s">index.html</span><span class="p">;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="kn">try_files</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="nv">$uri/</span><span class="w"> </span><span class="p">=</span><span class="mi">404</span><span class="p">;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p>Observeu que cadascuna aten en ports distints i que els fitxers de configuració en <strong>nginx</strong> poden tenir el nom que vullgam (no com en Apache, que havien de ser sí o sí <strong><em>.conf</em></strong>).</p>
-<h3 id="creacio-de-les-webs">Creació de les webs</h3>
-<p>Primer haurem de crear un directori per a cada web, dins de la carpeta <code>/var/www</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/tigres
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/lleons
-</code></pre></div></td></tr></table></div>
-<p>Podem crear <em>una web senzilla</em> mitjançant les següents comandes:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Web de Tigres al port 8081&lt;/h1&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/tigres/index.html
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Web de Lleons al port 8082&lt;/h1&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/var/www/lleons/index.html
-</code></pre></div></td></tr></table></div>
-<p>Finalment, ens assegurem que els propietaris i permissos són correctes:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>adminserver:adminserver<span class="w"> </span>/var/www/tigres<span class="w"> </span>/var/www/lleons
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">755</span><span class="w"> </span>/var/www/tigres<span class="w"> </span>/var/www/lleons
-</code></pre></div></td></tr></table></div>
-<h3 id="habilitar-les-configuracions-de-virtual-host">Habilitar les configuracions de Virtual Host</h3>
-<p>Amb la comanda <code>a2ensite</code> creem un enllaç dels fitxer de configuració de <strong><em>sites-available</em></strong> en <strong><em>sites-enabled</em></strong>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/tigres.com<span class="w"> </span>/etc/nginx/sites-enabled/
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/lleons.com<span class="w"> </span>/etc/nginx/sites-enabled/
-</code></pre></div></td></tr></table></div>
-<p>Finalment, reiniciem el servei i comprovem que les webs es serveixen:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
-</code></pre></div></td></tr></table></div>
-<p>Si tot ha anat bé, les webs haurien de ser accessibles en:</p>
-<ul>
-<li>TIGRES: <code>http://IP-DEL-SERVER:8081</code></li>
-<li>LLEONS: <code>http://IP-DEL-SERVER:8082</code></li>
-</ul>
-<h2 id="configuracio-de-virtual-hosts-mitjancant-nom">Configuració de <em>Virtual Hosts</em> mitjançant nom</h2>
-<p>Haurem de canviar l'escolta dels llocs per el port que haviem canviat i deixar-ho de nou al <strong>80</strong> (<code>listen</code>).</p>
-<p>La resta de les configuracions ja són correctes, perquè ja haviem posat la referència al nom del llocs (<code>server_name</code>).</p>
-<h3 id="configurar-noms-de-domini-dns-simulats">Configurar noms de domini (DNS simulats)</h3>
-<ol>
-<li>
-<p>Editem el fitxer <code>/etc/hosts</code>:<br />
-<code>sudo nano /etc/hosts</code></p>
-</li>
-<li>
-<p>Afegim aquestes línies:<br />
-   IP_DEL_SERVER tigres.com<br />
-   IP_DEL_SERVER lleons.com  </p>
-</li>
-<li>
-<p>Guardem i eixim.</p>
-</li>
-</ol>
 
 
 
@@ -1082,7 +937,7 @@ Al contrari que en Apache, si la configuració es basa en els ports d'accés al 
       <nav class="md-footer__inner md-grid" aria-label="Peu de pàgina" >
         
           
-          <a href="../Prac5VHostApache/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Servidor Apache">
+          <a href="../Prac5Autenticacio/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Autenticació Apache">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1092,20 +947,20 @@ Al contrari que en Apache, si la configuració es basa en els ports d'accés al 
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Servidor Apache
+                Autenticació Apache
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Prac5Autenticacio/" class="md-footer__link md-footer__link--next" aria-label="Següent: Autenticació Apache">
+          <a href="../Prac7Proxy/" class="md-footer__link md-footer__link--next" aria-label="Següent: Servei Proxy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Següent
               </span>
               <div class="md-ellipsis">
-                Autenticació Apache
+                Servei Proxy
               </div>
             </div>
             <div class="md-footer__button md-icon">
