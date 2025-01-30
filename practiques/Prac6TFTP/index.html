@@ -857,18 +857,20 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># apt-get install tftpd-hpa</span>
 </code></pre></div></td></tr></table></div>
 <p>A continuació, editem el fitxer de configuració:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># vim /etc/default/tftpd-hpa</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># nano /etc/default/tftpd-hpa</span>
 </code></pre></div></td></tr></table></div>
 <p>i modifiquem les línies del fitxer perquè quedin de la següent manera:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># Exemple de configuració
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>TFTP_USERNAME=&quot;tftp&quot;
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>TFTP_DIRECTORY=&quot;/tftpprova&quot;
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>TFTP_ADDRESS=&quot;0.0.0.0:69&quot;
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>TFTP_OPTIONS=&quot;--secure -c&quot;
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># Exemple de configuració
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>TFTP_USERNAME=&quot;tftp&quot;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>TFTP_DIRECTORY=&quot;/tftpprova&quot;
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>TFTP_ADDRESS=&quot;:69&quot;
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>TFTP_OPTIONS=&quot;--secure -c&quot;
 </code></pre></div></td></tr></table></div>
 <p>El paràmetre <code>-c</code> permet que es pugui enviar fitxers al servidor, i el directori <code>/tftpprova</code> es pot substituir pel que vulgueu perquè sigui un poc més amigable que el directori per defecte <code>/var/lib/tftpboot</code>.</p>
 <h2 id="crear-el-directori-del-servidor">Crear el directori del servidor</h2>
@@ -883,15 +885,14 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># sudo service tftpd-hpa restart</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="provar-el-servei-tftp">Provar el servei TFTP</h2>
-<p>Per a provar el servei necessitarem un client de TFTP. Ja que hem instal·lat el servidor <code>tftpd-hpa</code>, utilitzarem també el mateix client.</p>
+<p>Per a provar el servei necessitarem un client de TFTP. Ja que hem instal·lat el servidor <code>tftpd-hpa</code>, utilitzarem també el mateix client (<strong>COMPTE!</strong> sense la "d"!).</p>
 <p>En una altra màquina client, instal·lem el programari necessari per a connectar amb el servidor:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># sudo apt-get install tftp-hpa</span>
 </code></pre></div></td></tr></table></div>
 <p>Per connectar-nos farem:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>tftp<span class="w"> </span><span class="m">192</span>.168.69.1
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>tftp<span class="w"> </span>IP_DEL_SERVIDOR
 </code></pre></div></td></tr></table></div>
-<p><em>(Substituïu </em><strong><em>``</em></strong><em> per la IP del servidor TFTP.)</em></p>
-<p>Es quedarà esperant la introducció de nous comandaments.</p>
+<p>Es quedarà esperant la introducció de nous comandaments (Prompt <code>tftp&gt;</code>).</p>
 <p>Els comandaments bàsics per a funcionar són:</p>
 <ul>
 <li><code>put</code> i <code>get</code>: per a pujar i descarregar fitxers del servidor.</li>
